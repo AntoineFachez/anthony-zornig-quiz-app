@@ -3,6 +3,7 @@ const showAnswerButton = document.querySelector('.question-card button');
 let data;
 
 document.addEventListener('DOMContentLoaded', function () {
+
   fetch('/data/questions.json') 
     .then((response) => response.json())
     .then((fetchedData) => {
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log(data); 
       data?.forEach((item) => {
       
+
         const card = createQuestionCard(item);
 
         mainSection.appendChild(card);

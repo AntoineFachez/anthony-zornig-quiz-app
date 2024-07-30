@@ -3,20 +3,21 @@ const showAnswerButton = document.querySelector('.question-card button');
 let data;
 
 document.addEventListener('DOMContentLoaded', function () {
+  const dataUrl = new URL('/data/questions.json', import.meta.url);
+  // fetch('../data/questions.json')
   // fetch(
   //   'https://github.com/AntoineFachez/anthony-zornig-quiz-app/blob/main/data/questions.json'
   // )
-  fetch('/data/questions.json')
+  fetch(dataUrl)
     .then((response) => response.json())
     .then((fetchedData) => {
       data = fetchedData;
-      console.log(data);
+      console.log('data', data);
       data?.forEach((item) => {
         const card = createQuestionCard(item);
         mainSection.appendChild(card);
       });
     });
-  console.log(data);
 });
 let currentQuestion = 0;
 

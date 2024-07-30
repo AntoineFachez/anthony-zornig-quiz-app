@@ -1,10 +1,17 @@
-export function createButtons(item, questionCard, resultText) {
+export function createButtons(
+  item,
+  questionCard,
+  displayCurrentQuestion,
+  resultText,
+  correctAnswers
+) {
   const btnWrapper = document.createElement('div');
   btnWrapper.classList.add('btn-wrapper');
 
   item.possibleAnswers.forEach((possibleAnswer) => {
     const multipleChoiceButton = document.createElement('button');
     multipleChoiceButton.textContent = possibleAnswer.possibleAnswer;
+    multipleChoiceButton.classList.add('btn');
     multipleChoiceButton.classList.add('btn--multiple-choice');
     multipleChoiceButton.setAttribute(
       'aria-label',
@@ -14,6 +21,7 @@ export function createButtons(item, questionCard, resultText) {
     multipleChoiceButton.addEventListener('click', () => {
       if (possibleAnswer.possibleAnswer === item.answer) {
         resultText.textContent = 'Correct!';
+        correctAnswers++;
       } else {
         resultText.textContent = 'Incorrect!';
       }

@@ -1,5 +1,7 @@
 import { data } from './data.js';
 import { updateProgressBar } from './progressBar.js';
+import { displayResult } from './displayResult.js';
+import { createButtons } from './createButtons.js';
 // import { createQuestionCard } from './createQuestionCard.js';
 
 let currentQuestion = 0;
@@ -28,10 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
 export function displayCurrentQuestion() {
   mainSection.innerHTML = '';
 
-  if (!correctAnswersText) {
-    correctAnswersText = document.createElement('p');
-  }
-  correctAnswersText.textContent = correctAnswers;
   // correctAnswersText.classList.add('question-card--text');
   // correctAnswersText.setAttribute('aria-label', correctAnswersText);
 
@@ -45,13 +43,17 @@ export function displayCurrentQuestion() {
     updateProgressBar(data, currentQuestion);
     console.log(correctAnswers);
   } else {
-    displayResult();
+    displayResult(
+      mainSection,
+      data,
+      currentQuestion,
+      correctAnswers,
+      correctAnswersText
+    );
     allQuestionsAnswered = true;
   }
 }
-export function displayResult() {
-  mainSection.appendChild(correctAnswersText);
-}
+
 export function createQuestionCard(item) {
   const questionCard = document.createElement('section');
   questionCard.classList.add('question-card');
@@ -90,41 +92,15 @@ export function createQuestionCard(item) {
 
   questionCard.appendChild(questionText);
   questionCard.appendChild(resultText);
-  const btnWrapper = createButtons(item, questionCard, resultText);
+  const btnWrapper = createButtons(
+    item,
+    questionCard,
+    displayCurrentQuestion,
+    resultText,
+    correctAnswers
+  );
   questionCard.appendChild(bookmarkDiv);
   questionCard.appendChild(showAnswerButton);
 
   return questionCard;
-}
-export function createButtons(item, questionCard, resultText) {
-  const btnWrapper = document.createElement('div');
-  btnWrapper.classList.add('btn-wrapper');
-
-  item.possibleAnswers.forEach((possibleAnswer) => {
-    const multipleChoiceButton = document.createElement('button');
-    multipleChoiceButton.textContent = possibleAnswer.possibleAnswer;
-    multipleChoiceButton.classList.add('btn');
-    multipleChoiceButton.classList.add('btn--multiple-choice');
-    multipleChoiceButton.setAttribute(
-      'aria-label',
-      possibleAnswer.possibleAnswer
-    );
-
-    multipleChoiceButton.addEventListener('click', () => {
-      if (possibleAnswer.possibleAnswer === item.answer) {
-        resultText.textContent = 'Correct!';
-        correctAnswers++;
-      } else {
-        resultText.textContent = 'Incorrect!';
-      }
-
-      questionCard.querySelectorAll('button').forEach((btn) => {
-        btn.disabled = true;
-      });
-      setTimeout(displayCurrentQuestion, 1000);
-    });
-    btnWrapper.appendChild(multipleChoiceButton);
-
-    questionCard.appendChild(btnWrapper);
-  });
 }

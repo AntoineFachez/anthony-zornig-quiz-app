@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Send+Flowers&family=VT323&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,33 +11,83 @@ body {
   height: fit-content;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 5rem 0 5rem 0;
 }
 header {
+  position: fixed;
+  top: 0;
   width: 100%;
   height: fit-content;
-  background-color: green;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+  background-color: #e23636;
+}
+h2 {
+  font-family: 'Marvel', sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  color: #504a4a;
 }
 .main-section {
+  /* width: 100vw;
+  height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: white;
+  gap: 2rem;
+  overflow: auto;
+}
+section {
+  /* z-index: 10;
+  position: sticky;
+  top: 2rem; */
   width: 100%;
+  max-width: 50ch;
   height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: wheat;
+  background-color: #518cca;
+  padding: 1rem;
 }
-section {
-  width: 100%;
-  max-width: 50ch;
-  height: fit-content;
-  background-color: white;
+.question-card--text {
+  font-family: 'Marvel', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-style: normal;
+  color: white;
 }
-.multiple-choice {
-  /* background-color: red; */
+.btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 1;
+}
+.btn--multiple-choice {
+  width: fit-content;
+  font-family: 'Marvel', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  font-style: normal;
+  color: #504a4a;
+  padding: 0.2rem;
+  /* background-color: #f78f3f; */
+}
+.btn--inactive {
+  color: grey;
 }
 footer {
+  position: fixed;
+  bottom: 0;
   width: 100%;
   height: fit-content;
-  background-color: yellowgreen;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+  background-color: #e23636;
 }

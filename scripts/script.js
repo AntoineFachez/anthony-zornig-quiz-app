@@ -155,6 +155,25 @@ let data = [
     ],
   },
 ];
+let currentQuestion = 0;
+
+const mainSection = document.querySelector('.main-section');
+
+function displayCurrentQuestion() {
+  mainSection.innerHTML = '';
+  const currentQuestionNumber = document.createElement('p');
+  currentQuestionNumber.textContent = currentQuestion;
+  currentQuestionNumber.setAttribute('aria-label', currentQuestion);
+  mainSection.appendChild(currentQuestionNumber);
+  if (currentQuestion < data.length) {
+    const card = createQuestionCard(data[currentQuestion]);
+    mainSection.appendChild(card);
+    currentQuestion++;
+  } else {
+    allQuestionsAnswered = true;
+    displayResult();
+  }
+}
 
 document.addEventListener('DOMContentLoaded', function () {
   const dataUrl = new URL('/data/questions.js', import.meta.url);
@@ -171,52 +190,68 @@ document.addEventListener('DOMContentLoaded', function () {
     const card = createQuestionCard(item);
     mainSection.appendChild(card);
   });
+  displayCurrentQuestion();
 });
-// });
-
-let currentQuestion = 0;
-
-const mainSection = document.querySelector('.main-section');
-
 function createQuestionCard(item) {
   const questionCard = document.createElement('section');
   questionCard.classList.add('question-card');
+
+  const btnWrapper = document.createElement('div');
+  btnWrapper.classList.add('btn-wrapper');
 
   const bookmarkDiv = document.createElement('div');
   bookmarkDiv.classList.add('bookmark');
 
   const questionText = document.createElement('p');
   questionText.textContent = item.question;
+  questionText.classList.add('question-card--text');
+  questionText.setAttribute('aria-label', questionText);
+
+  const resultText = document.createElement('p');
+  resultText.setAttribute('aria-label', resultText);
 
   const showAnswerButton = document.createElement('button');
   showAnswerButton.textContent = 'Show Answer';
+
+  showAnswerButton.setAttribute(
+    'aria-label',
+    'Show answer for question ' + currentQuestion
+  );
+
   showAnswerButton.addEventListener('click', () => {
     questionText.textContent = item.answer;
     showAnswerButton.disabled = true;
   });
 
-  questionCard.appendChild(questionText);
-  questionCard.appendChild(bookmarkDiv);
-
   item.possibleAnswers.forEach((possibleAnswer) => {
     const multipleChoiceButton = document.createElement('button');
     multipleChoiceButton.textContent = possibleAnswer.possibleAnswer;
-    multipleChoiceButton.classList.add('multiple-choice');
+    multipleChoiceButton.classList.add('btn--multiple-choice');
+    multipleChoiceButton.setAttribute(
+      'aria-label',
+      possibleAnswer.possibleAnswer
+    );
+
     multipleChoiceButton.addEventListener('click', () => {
       if (possibleAnswer.possibleAnswer === item.answer) {
-        questionText.textContent = 'Correct!';
+        resultText.textContent = 'Correct!';
       } else {
-        questionText.textContent = 'Incorrect!';
+        resultText.textContent = 'Incorrect!';
       }
 
-      questionCard
-        .querySelectorAll('button')
-        .forEach((btn) => (btn.disabled = true));
+      questionCard.querySelectorAll('button').forEach((btn) => {
+        btn.disabled = true;
+      });
+      setTimeout(displayCurrentQuestion, 1000);
     });
+    btnWrapper.appendChild(multipleChoiceButton);
 
-    questionCard.appendChild(multipleChoiceButton);
+    questionCard.appendChild(btnWrapper);
   });
 
+  questionCard.appendChild(questionText);
+  questionCard.appendChild(resultText);
+  questionCard.appendChild(bookmarkDiv);
   questionCard.appendChild(showAnswerButton);
 
   return questionCard;

@@ -3,14 +3,13 @@ const showAnswerButton = document.querySelector('.question-card button');
 let data;
 
 document.addEventListener('DOMContentLoaded', function () {
-  fetch('/data/questions.json') // Assuming you've renamed it to .json
+  fetch('/data/questions.json') 
     .then((response) => response.json())
     .then((fetchedData) => {
       data = fetchedData;
-      console.log(data); // Log data *after* it's been assigned
+      console.log(data); 
       data?.forEach((item) => {
-        // const card = createQuestionCard(item.question, item.answer);
-        const card = createQuestionCard(item);
+          const card = createQuestionCard(item);
         mainSection.appendChild(card);
       });
     });
@@ -33,8 +32,7 @@ function createQuestionCard(item) {
   showAnswerButton.textContent = 'Show Answer';
   showAnswerButton.addEventListener('click', () => {
     questionText.textContent = item.answer;
-    showAnswerButton.disabled = true; // Disable after showing answer
-  });
+    showAnswerButton.disabled = true; 
 
   questionCard.appendChild(questionText);
   questionCard.appendChild(bookmarkDiv);
@@ -50,7 +48,6 @@ function createQuestionCard(item) {
         questionText.textContent = 'Incorrect!';
       }
 
-      // Disable all buttons in this question card
       questionCard
         .querySelectorAll('button')
         .forEach((btn) => (btn.disabled = true));

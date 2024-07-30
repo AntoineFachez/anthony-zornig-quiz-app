@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Send+Flowers&family=VT323&display=swap');
-
+:root {
+  --paddingBodyTop: 4rem;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,13 +10,14 @@
 body {
   width: 100vw;
   height: 100vh;
-  height: fit-content;
+  /* height: fit-content; */
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 5rem 0 5rem 0;
+  padding: var(--paddingBodyTop) 1rem 30% 1rem;
+  background-color: #022;
 }
 header {
   position: fixed;
@@ -23,25 +26,39 @@ header {
   height: fit-content;
   display: flex;
   justify-content: space-evenly;
-  padding: 1rem;
+  padding: 0.5rem;
   background-color: #e23636;
 }
-h2 {
+h1 {
   font-family: 'Marvel', sans-serif;
-  font-weight: 800;
+  font-weight: 700;
   font-style: normal;
-  color: #504a4a;
+  color: white;
 }
 .main-section {
-  /* width: 100vw;
-  height: 100vh; */
+  width: 100%;
+  /* height: 100%; */
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   flex-wrap: wrap;
-  justify-content: flex-start;
-  background-color: white;
-  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  /* background-color: white; */
+  /* gap: 2rem; */
   overflow: auto;
+}
+.progress-bar {
+  width: 100%; /* Or set a fixed width */
+  height: 10px; /* Adjust the height as needed */
+  background-color: #455d3b; /* Color for the filled part */
+  /* border-radius: 5px; Add rounded corners (optional) */
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%; /* Initial width is 0 */
+  background-color: #9bc063; /* Background color for the empty bar */
+  transition: width 0.3s ease; /* Smooth transition effect */
 }
 section {
   /* z-index: 10;
@@ -53,8 +70,19 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #518cca;
   padding: 1rem;
+  border-radius: 5px;
+  background-color: #518cca;
+  gap: 0.5rem;
+  box-shadow: #022;
+}
+.question-card--image {
+  width: 100%;
+  max-width: 200px;
+  height: 100%;
+  max-height: 400px;
+  padding: 1rem;
+  object-fit: contain;
 }
 .question-card--text {
   font-family: 'Marvel', sans-serif;
@@ -65,21 +93,40 @@ section {
 }
 .btn-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  gap: 1;
+  align-items: center;
+  gap: 0.5rem;
 }
-.btn--multiple-choice {
-  width: fit-content;
+.btn {
+  /* box-shadow: none; */
+  border-radius: 5px;
+  padding: 0.2rem;
   font-family: 'Marvel', sans-serif;
   font-size: 1rem;
   font-weight: 800;
   font-style: normal;
   color: #504a4a;
-  padding: 0.2rem;
+  border: none;
+  cursor: 'pointer';
+}
+.btn--multiple-choice {
+  width: fit-content;
+
   /* background-color: #f78f3f; */
 }
 .btn--inactive {
   color: grey;
+}
+.btn--show-answer {
+  width: fit-content;
+  justify-self: flex-end;
+  align-self: flex-end;
+
+  background-color: #f78f3f;
+}
+.btn--nav {
+  text-transform: uppercase;
 }
 footer {
   position: fixed;

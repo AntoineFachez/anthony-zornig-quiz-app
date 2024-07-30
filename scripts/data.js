@@ -5,7 +5,7 @@ export const data = [
     answer: 'Iron Man',
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/en/0/02/Iron_Man_%282008_film%29_poster.jpg',
-
+    imgAlt: 'Iron_Man_%282008_film%29_poster',
     possibleAnswers: [
       { possibleAnswer: 'The Incredible Hulk' },
       { possibleAnswer: 'Iron Man' },
@@ -18,7 +18,7 @@ export const data = [
     answer: 'Infinity Stones',
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/en/7/72/The_Infinity_Stones.jpg',
-
+    imgAlt: 'The_Infinity_Stones',
     possibleAnswers: [
       { possibleAnswer: 'Infinity Stones' },
       { possibleAnswer: 'Cosmic Cubes' },
@@ -30,7 +30,7 @@ export const data = [
     answer: 'Tony Stark',
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/en/4/47/Iron_Man_%28circa_2018%29.png',
-
+    imgAlt: 'Iron_Man_%28circa_2018%29',
     possibleAnswers: [
       { possibleAnswer: 'Tony Stark' },
       { possibleAnswer: 'Bruce Banner' },
@@ -44,7 +44,7 @@ export const data = [
     answer: 'Captain America: Civil War',
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/en/5/53/Captain_America_Civil_War_poster.jpg',
-
+    imgAlt: 'Captain_America_Civil_War_poster',
     possibleAnswers: [
       { possibleAnswer: 'Black Panther' },
       { possibleAnswer: 'Captain America: Civil War' },
@@ -56,7 +56,7 @@ export const data = [
     answer: 'Mjolnir',
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/commons/4/4c/The_third_gift_%E2%80%94_an_enormous_hammer_by_Elmer_Boyd_Smith.jpg',
-
+    imgAlt: '94_an_enormous_hammer_by_Elmer_Boyd_Smith',
     possibleAnswers: [
       { possibleAnswer: 'Stormbreaker' },
       { possibleAnswer: 'Mjolnir' },
@@ -68,7 +68,7 @@ export const data = [
     answer: 'Chris Evans',
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/ChrisEvans2023.jpg/800px-ChrisEvans2023.jpg',
-
+    imgAlt: 'ChrisEvans2023',
     possibleAnswers: [
       { possibleAnswer: 'Chris Hemsworth' },
       { possibleAnswer: 'Chris Pratt' },
@@ -82,7 +82,7 @@ export const data = [
       'S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement, and Logistics Division)',
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/en/e/ef/S.H.I.E.L.D._%28Marvel_616_Universe%29.png',
-
+    imgAlt: 'S.H.I.E.L.D._%28Marvel_616_Universe',
     possibleAnswers: [
       {
         possibleAnswer:
@@ -101,7 +101,7 @@ export const data = [
     answer: 'Captain America: Civil War',
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/en/e/ee/Spider-Man_and_Captain_America_in_Doctor_Doom%27s_Revenge_cover.jpg',
-
+    imgAlt: 'Spider-Man_and_Captain_America_in_Doctor_Doom',
     possibleAnswers: [
       { possibleAnswer: 'Spider-Man: Homecoming' },
       { possibleAnswer: 'Captain America: Civil War' },
@@ -114,7 +114,7 @@ export const data = [
     answer: 'Wakanda',
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Lake_Turkana_vicinity.jpg/1024px-Lake_Turkana_vicinity.jpg',
-
+    imgAlt: 'Lake_Turkana_vicinity',
     possibleAnswers: [
       { possibleAnswer: 'Zamunda' },
       { possibleAnswer: 'Wakanda' },
@@ -127,7 +127,7 @@ export const data = [
     answer: 'Avengers: Infinity War',
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/en/c/cd/Thanos_Infinity_4.png',
-
+    imgAlt: 'Thanos_Infinity_4',
     possibleAnswers: [
       { possibleAnswer: 'Avengers: Infinity War' },
       { possibleAnswer: 'Guardians of the Galaxy' },
@@ -140,7 +140,7 @@ export const data = [
     answer: 'Super Soldier Serum',
     imgUrl:
       'https://i.etsystatic.com/39856277/r/il/3d95e0/4518415597/il_1140xN.4518415597_76r9.jpg',
-
+    imgAlt: '4518415597_76r9',
     possibleAnswers: [
       { possibleAnswer: 'Vita-Ray Serum' },
       { possibleAnswer: 'Super Soldier Serum' },
@@ -152,7 +152,7 @@ export const data = [
     answer: 'Joss Whedon',
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Joss_Whedon_by_Gage_Skidmore_4.jpg/800px-Joss_Whedon_by_Gage_Skidmore_4.jpg',
-
+    imgAlt: 'Joss_Whedon_by_Gage_Skidmore_4',
     possibleAnswers: [
       { possibleAnswer: 'James Gunn' },
       { possibleAnswer: 'The Russo Brothers' },
@@ -165,7 +165,7 @@ export const data = [
     answer: 'Nick Fury',
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/en/c/c8/Samuel_L._Jackson_as_Nick_Fury_in_The_Avengers_%282012_film%29.jpg',
-
+    imgAlt: 'Samuel_L._Jackson_as_Nick_Fury_in_The_Avengers',
     possibleAnswers: [
       { possibleAnswer: 'Phil Coulson' },
       { possibleAnswer: 'Maria Hill' },
@@ -178,7 +178,7 @@ export const data = [
     answer: 'Mind Stone',
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/de/3/3c/The_Avengers_2012_logo.jpg',
-
+    imgAlt: 'The_Avengers_2012_logo',
     possibleAnswers: [
       { possibleAnswer: 'Space Stone' },
       { possibleAnswer: 'Mind Stone' },
@@ -190,7 +190,7 @@ export const data = [
     answer: 'Flora Colossus',
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/en/1/17/I_am_Groot_vol_1.jpeg',
-
+    imgAlt: 'I_am_Groot_vol_1',
     possibleAnswers: [
       { possibleAnswer: 'Arboreal Alien' },
       { possibleAnswer: 'Flora Colossus' },

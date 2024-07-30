@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  width: 100%;
+  height: fit-content;
+  background-color: green;
+}
+.main-section {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: wheat;
+}
+section {
+  width: 100%;
+  max-width: 50ch;
+  height: fit-content;
+  background-color: white;
+}
+.multiple-choice {
+  /* background-color: red; */
+}
+footer {
+  width: 100%;
+  height: fit-content;
+  background-color: yellowgreen;
+}

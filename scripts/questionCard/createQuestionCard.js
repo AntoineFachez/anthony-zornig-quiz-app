@@ -56,7 +56,8 @@ export function createBookMark(currentsStateData, questionCard, item) {
     item.bookMarkState === false
       ? '/scripts/icons/bookmark_transparent.png'
       : '/scripts/icons/bookmark_filled.png';
-  bookmarkIcon.alt = 'Bookmark this question';
+  bookmarkIcon.alt =
+    item.bookMarkState === false ? 'Bookmark question' : 'marked question';
 
   bookmarkIcon.addEventListener('click', () => {
     // Find the question object in the data array

@@ -7,9 +7,14 @@ document.addEventListener('DOMContentLoaded', function () {
     .then((response) => response.json())
     .then((fetchedData) => {
       data = fetchedData;
+
+   
+
       console.log(data); 
       data?.forEach((item) => {
-          const card = createQuestionCard(item);
+      
+        const card = createQuestionCard(item);
+
         mainSection.appendChild(card);
       });
     });
@@ -32,7 +37,10 @@ function createQuestionCard(item) {
   showAnswerButton.textContent = 'Show Answer';
   showAnswerButton.addEventListener('click', () => {
     questionText.textContent = item.answer;
-    showAnswerButton.disabled = true; 
+
+    showAnswerButton.disabled = true;
+  });
+
 
   questionCard.appendChild(questionText);
   questionCard.appendChild(bookmarkDiv);
@@ -47,6 +55,7 @@ function createQuestionCard(item) {
       } else {
         questionText.textContent = 'Incorrect!';
       }
+
 
       questionCard
         .querySelectorAll('button')

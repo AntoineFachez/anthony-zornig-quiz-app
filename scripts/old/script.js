@@ -1,5 +1,5 @@
 import { createQuestionCard } from './createQuestionCard.js';
-import { displayCurrentQuestion } from './display.js';
+import { displayCurrentQuestion } from './displayCurrentQuestion.js';
 import { data } from './data.js';
 
 document.addEventListener('DOMContentLoaded', function () {

@@ -1,6 +1,6 @@
 export function displayResult(
   mainSection,
-  data,
+  currentsStateData,
   currentQuestion,
   correctAnswers,
   correctAnswersText
@@ -8,7 +8,11 @@ export function displayResult(
   if (!correctAnswersText) {
     correctAnswersText = document.createElement('p');
   }
-  if (currentQuestion === correctAnswers && correctAnswers === data.length) {
+  console.log('dataLength', correctAnswers, currentsStateData.length);
+  if (
+    currentQuestion === correctAnswers &&
+    correctAnswers === currentsStateData.length
+  ) {
     correctAnswersText.textContent = `You answered ${correctAnswers} of ${currentQuestion} correct. You know your shit! Thanks for playing!`;
     correctAnswersText.classList.add('wow-a-winner');
   } else if (correctAnswers / currentQuestion >= 0.8) {

@@ -3,9 +3,10 @@ const showAnswerButton = document.querySelector('.question-card button');
 let data;
 
 document.addEventListener('DOMContentLoaded', function () {
-  fetch(
-    'https://github.com/AntoineFachez/anthony-zornig-quiz-app/blob/main/data/questions.json'
-  )
+  // fetch(
+  //   'https://github.com/AntoineFachez/anthony-zornig-quiz-app/blob/main/data/questions.json'
+  // )
+  fetch('/data/questions.json')
     .then((response) => response.json())
     .then((fetchedData) => {
       data = fetchedData;

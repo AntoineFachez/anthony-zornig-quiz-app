@@ -1,2 +1,2 @@
 # The Marvel World is marvelous!
-## Check your knowledge and PLAY THE QUIZ!
+### Check your knowledge and PLAY THE QUIZ!

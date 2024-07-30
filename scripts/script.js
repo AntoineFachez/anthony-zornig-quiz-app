@@ -3,7 +3,7 @@ const showAnswerButton = document.querySelector('.question-card button');
 let data;
 
 document.addEventListener('DOMContentLoaded', function () {
-  const dataUrl = new URL('/data/questions.json', import.meta.url);
+  const dataUrl = new URL('/data/questions.js', import.meta.url);
   // fetch('../data/questions.json')
   // fetch(
   //   'https://github.com/AntoineFachez/anthony-zornig-quiz-app/blob/main/data/questions.json'

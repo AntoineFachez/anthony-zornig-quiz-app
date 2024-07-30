@@ -3,7 +3,7 @@ const showAnswerButton = document.querySelector('.question-card button');
 let data;
 
 document.addEventListener('DOMContentLoaded', function () {
-  fetch('../data/questions.json') // Assuming you've renamed it to .json
+  fetch('/data/questions.json') // Assuming you've renamed it to .json
     .then((response) => response.json())
     .then((fetchedData) => {
       data = fetchedData;

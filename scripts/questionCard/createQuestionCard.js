@@ -54,8 +54,8 @@ export function createBookMark(currentsStateData, questionCard, item) {
   bookmarkIcon.classList.add(`--${item.bookMarkState}`);
   bookmarkIcon.src =
     item.bookMarkState === false
-      ? '/assets/bookmark_transparent.png'
-      : '/assets/bookmark_filled.png';
+      ? '/scripts/icons/bookmark_transparent.png'
+      : '/scripts/icons/bookmark_filled.png';
   bookmarkIcon.alt = 'Bookmark this question';
 
   bookmarkIcon.addEventListener('click', () => {

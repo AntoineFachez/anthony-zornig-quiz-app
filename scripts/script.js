@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         mainSection.appendChild(card);
       });
     });
+  console.log(data);
 });
 let currentQuestion = 0;
 

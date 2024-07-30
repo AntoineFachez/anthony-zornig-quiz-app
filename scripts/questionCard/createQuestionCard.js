@@ -88,9 +88,10 @@ export function createBookMark(currentsStateData, questionCard, item) {
     }
     bookmarkIcon.src =
       item.bookMarkState === false
-        ? '/assets/bookmark_transparent.png'
-        : '/assets/bookmark_filled.png';
-    bookmarkIcon.alt = 'Bookmark this question';
+        ? '/scripts/icons/bookmark_transparent.png'
+        : '/scripts/icons/bookmark_filled.png';
+    bookmarkIcon.alt =
+      item.bookMarkState === false ? 'Bookmark question' : 'marked question';
   });
 
   bookmarkDiv.appendChild(bookmarkIcon);

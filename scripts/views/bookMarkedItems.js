@@ -1,16 +1,16 @@
 import { data } from '../../data/data.js';
 
-let currentsStateData;
+let currentStateData;
 export function getBookMarkedItems() {
   const bookMarkButton = document.querySelector('.--bookmark');
 
   if (!localStorage.getItem('quizData')) {
-    currentsStateData = data;
+    currentStateData = data;
   } else {
-    currentsStateData = JSON.parse(localStorage.getItem('quizData'));
+    currentStateData = JSON.parse(localStorage.getItem('quizData'));
   }
 
-  const bookmarkedArray = currentsStateData.filter(
+  const bookmarkedArray = currentStateData.filter(
     (item) => item.bookMarkState === true
   );
   bookMarkButton.textContent =
@@ -23,22 +23,21 @@ export function getBookMarkedItems() {
 export function displayAllBookMarked(
   // bookmarkedArray,
   //   mainSection,
-  // currentQuestion,
+  // currentQuestionIndex,
   // displayCurrentQuestion,
-  createButtons
+  createButtonArrayCard
 ) {
   const bookmarkedArray = getBookMarkedItems();
   const mainSection = document.querySelector('.main-section');
   console.log('clicked');
   const bookmarkedQuestions = bookmarkedArray.forEach((item) => {
     createQuestionCard(
-      bookmarkedArray,
+      currentStateData,
       mainSection,
       item,
-      '',
-      '',
-      createButtons
-      // correctAnswers
+      currentQuestionIndex,
+      createCurrentQuestion,
+      createButtonArrayCard
     );
   });
   mainSection.appendChild(bookmarkedQuestions);

@@ -1,8 +1,10 @@
 import { data } from '../data/data.js';
+// import { createCurrentQuestion } from './questionCard/createCurrentQuestion.js';
 import { createQuestionCard } from './questionCard/createQuestionCard.js';
 import { updateProgressBar } from './ui/progressBar.js';
 import { displayResult } from './ui/displayResult.js';
 import { getBookMarkedItems } from './views/bookMarkedItems.js';
+import { setCurrentView, setInitialAppState } from './ui/currentView.js';
 import {
   initHomeButton,
   initBookMarkButton,
@@ -10,138 +12,110 @@ import {
 } from './ui/footerButtons.js';
 
 import { displayAllBookMarked } from './views/bookMarkedItems.js';
-// import { createButtons } from './createButtons.js';
+// import { createButtonArrayCard } from './createButtonArrayCard.js';
 
-let currentQuestion = 0;
-let correctAnswers = 0;
+let currentQuestionIndex = 0;
+
+let countCorrectAnswers = 0;
 let progressPercent = 0;
 let correctAnswersText;
-let currentsStateData;
+let currentStateData;
 let appState = { currentView: 'quiz' };
 const mainSection = document.querySelector('.main-section');
+const bookmarkedArray = getBookMarkedItems();
+
+const currentQuestionNumber = document.createElement('p');
+currentQuestionNumber.classList.add('current-question-number');
 
 document.addEventListener('DOMContentLoaded', function () {
   setCurrentView(appState);
-  const bookmarkedArray = getBookMarkedItems();
-  const dataUrl = new URL('/data/questions.js', import.meta.url);
-  // fetch('../data/questions.json')
-  // fetch(
-  //   'https://github.com/AntoineFachez/anthony-zornig-quiz-app/blob/main/data/questions.json'
-  // )
-  //   fetch(dataUrl)
-  //     .then((response) => response.json())
-  //     .then((fetchedData) => {
-  //       data = fetchedData;
-  //       console.log('data', data);
   if (!localStorage.getItem('quizData')) {
     data;
 
     localStorage.setItem('quizData', JSON.stringify(data));
-    currentsStateData = data;
+    currentStateData = data;
   } else {
-    currentsStateData = JSON.parse(localStorage.getItem('quizData'));
+    currentStateData = JSON.parse(localStorage.getItem('quizData'));
   }
-  currentsStateData?.forEach((item) => {
-    const card = createQuestionCard(
-      currentsStateData,
-      mainSection,
-      item,
-      currentQuestion,
-      createCurrentQuestion,
-      createButtons
-    );
-    mainSection.appendChild(card);
-  });
 
   initHomeButton(appState);
   initBookMarkButton(appState);
   initProfileButton(appState);
 
-  if (appState.currentView === 'quiz') {
-    createCurrentQuestion(
-      mainSection,
-      currentQuestion,
-      currentsStateData,
-      createButtons,
-      correctAnswers,
-      correctAnswersText,
-      createQuestionCard,
-      updateProgressBar,
-      progressPercent
-    );
-  } else if (appState.currentView === 'bookmarked') {
-    console.log(bookmarkedArray);
-    displayAllBookMarked(
-      // bookmarkedArray,
-      //   mainSection,
-      // currentQuestion,
-      // displayCurrentQuestion,
-      createButtons
-    );
-  } else if (appState === 'profile') {
-  }
+  setInitialAppState(
+    appState,
+    mainSection,
+    currentQuestionIndex,
+    currentStateData,
+    createButtonArrayCard,
+    countCorrectAnswers,
+    correctAnswersText,
+    createQuestionCard,
+    createCurrentQuestion,
+    updateProgressBar,
+    progressPercent
+  );
 });
 document.addEventListener('click', (event) => {
   // Code to handle any click event on the document
-  setCurrentView(appState);
-  console.log(appState);
+  setCurrentView(
+    appState,
+    mainSection,
+    currentQuestionIndex,
+    currentStateData,
+    createButtonArrayCard,
+    countCorrectAnswers,
+    correctAnswersText,
+    createQuestionCard,
+    createCurrentQuestion,
+    updateProgressBar,
+    progressPercent
+  );
+  console.log(appState, 'qIndex:', currentQuestionIndex);
 });
-export function setCurrentView(appState) {
-  const currentViewIndicator = document.getElementById('current-view');
-  if (currentViewIndicator) {
-    currentViewIndicator.textContent = appState.currentView;
-    setTimeout(() => {
-      currentViewIndicator.classList.add('current-view--changed');
-      currentViewIndicator.classList.remove('current-view');
-    }, 0);
-    setTimeout(() => {
-      currentViewIndicator.classList.add('current-view');
-      currentViewIndicator.classList.remove('current-view--changed');
-    }, 1000);
-  } else {
-    console.error('current-view element not found');
-  }
-}
-export function createCurrentQuestion() {
+
+export function createCurrentQuestion(
+  mainSection
+  // currentQuestionIndex,
+  // currentStateData,
+  // createButtonArrayCard,
+  // countCorrectAnswers,
+  // correctAnswersText,
+  // createQuestionCard,
+  // updateProgressBar,
+  // progressPercent
+) {
   mainSection.innerHTML = '';
 
-  // correctAnswersText.classList.add('question-card--text');
-  // correctAnswersText.setAttribute('aria-label', correctAnswersText);
+  currentQuestionNumber.textContent = `Question ${currentQuestionIndex + 1}`;
+  currentQuestionNumber.setAttribute('aria-label', currentQuestionIndex);
 
-  const currentQuestionNumber = document.createElement('p');
-  currentQuestionNumber.classList.add('current-question-number');
-  // currentQuestionNumber.textContent = currentQuestion + 1;
-
-  currentQuestionNumber.textContent = `Question ${currentQuestion + 1}`;
-  // currentQuestionNumber.style.transform = `translateX(${progressPercent}%)`;
-  currentQuestionNumber.setAttribute('aria-label', currentQuestion);
-
-  if (currentQuestion < currentsStateData.length) {
+  if (currentQuestionIndex < currentStateData.length) {
     const card = createQuestionCard(
-      currentsStateData,
+      currentStateData,
       mainSection,
-      currentsStateData[currentQuestion],
-      currentQuestion,
+      currentStateData[currentQuestionIndex],
+      currentQuestionIndex,
       createCurrentQuestion,
-      createButtons
+      createButtonArrayCard
     );
     mainSection.appendChild(card);
     mainSection.appendChild(currentQuestionNumber);
-    currentQuestion++;
-    updateProgressBar(currentsStateData, currentQuestion, progressPercent);
+    currentQuestionIndex++;
+    updateProgressBar(currentStateData, currentQuestionIndex, progressPercent);
   } else {
     displayResult(
       mainSection,
-      currentsStateData,
-      currentQuestion,
-      correctAnswers,
+      currentStateData,
+      currentQuestionIndex,
+      countCorrectAnswers,
       correctAnswersText
     );
     allQuestionsAnswered = true;
   }
 }
 
-export function createButtons(
+export function createButtonArrayCard(
   item,
   questionCard,
   createCurrentQuestion,
@@ -164,7 +138,7 @@ export function createButtons(
       if (possibleAnswer.possibleAnswer === item.answer) {
         resultText.textContent = 'Correct!';
         multipleChoiceButton.classList.add('btn--multiple-choice--true');
-        correctAnswers++;
+        countCorrectAnswers++;
       } else {
         resultText.textContent = 'Incorrect!';
         multipleChoiceButton.classList.add('btn--multiple-choice--false');
@@ -177,10 +151,10 @@ export function createButtons(
         () =>
           createCurrentQuestion(
             mainSection,
-            currentQuestion,
-            currentsStateData,
-            createButtons,
-            correctAnswers,
+            currentQuestionIndex,
+            currentStateData,
+            createButtonArrayCard,
+            countCorrectAnswers,
             correctAnswersText,
             createQuestionCard,
             updateProgressBar,

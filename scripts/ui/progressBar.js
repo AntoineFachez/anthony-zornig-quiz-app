@@ -1,9 +1,9 @@
 export function updateProgressBar(
-  currentsStateData,
-  currentQuestion,
+  currentStateData,
+  currentQuestionIndex,
   progressPercent
 ) {
   const progressBarFill = document.querySelector('.progress-bar-fill');
-  progressPercent = (currentQuestion / currentsStateData.length) * 100;
+  progressPercent = (currentQuestionIndex / currentStateData.length) * 100;
   progressBarFill.style.width = `${progressPercent}%`;
 }

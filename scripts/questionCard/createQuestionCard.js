@@ -2,29 +2,29 @@ import { getBookMarkedItems } from '../views/bookMarkedItems.js';
 // import { createBookMark } from '../questionCard/createBookmark.js';
 
 export function createQuestionCard(
-  currentsStateData,
+  currentStateData,
   mainSection,
   item,
-  currentQuestion,
+  currentQuestionIndex,
   displayCurrentQuestion,
-  createButtons
-  // correctAnswers
+  createButtonArrayCard
+  // countCorrectAnswers
 ) {
   const questionCard = document.createElement('section');
   questionCard.classList.add('question-card');
 
-  createBookMark(currentsStateData, questionCard, item);
+  createBookMark(currentStateData, questionCard, item);
   createImg(mainSection, item);
   createQuestionText(questionCard, item);
   const resultText = createResultText(mainSection, questionCard);
-  createButtons(
+  createButtonArrayCard(
     item,
     questionCard,
     displayCurrentQuestion,
     resultText
-    // correctAnswers
+    // countCorrectAnswers
   );
-  createCheatButton(item, questionCard, currentQuestion, resultText);
+  createCheatButton(item, questionCard, currentQuestionIndex, resultText);
 
   return questionCard;
 }
@@ -47,7 +47,7 @@ export function createImg(mainSection, item) {
     mainSection.appendChild(img);
   }
 }
-export function createBookMark(currentsStateData, questionCard, item) {
+export function createBookMark(currentStateData, questionCard, item) {
   const iconUrl = new URL(
     'https://raw.githubusercontent.com/AntoineFachez/anthony-zornig-quiz-app/main/assets/icons/',
     import.meta.url
@@ -71,17 +71,17 @@ export function createBookMark(currentsStateData, questionCard, item) {
   // Toggle state
   bookmarkIcon.addEventListener('click', () => {
     // Find the question object in the data array
-    const questionIndex = currentsStateData.findIndex(
+    const questionIndex = currentStateData.findIndex(
       (q) => q.imgUrl === item.imgUrl
     );
 
     if (questionIndex !== -1) {
       // Toggle the bookmark state in the data array
-      currentsStateData[questionIndex].bookMarkState =
-        !currentsStateData[questionIndex].bookMarkState;
+      currentStateData[questionIndex].bookMarkState =
+        !currentStateData[questionIndex].bookMarkState;
 
       // Save the entire data array to LS
-      localStorage.setItem('quizData', JSON.stringify(currentsStateData));
+      localStorage.setItem('quizData', JSON.stringify(currentStateData));
       // Get the current Bookmark states from LS
       getBookMarkedItems();
     } else {
@@ -113,14 +113,14 @@ export function createQuestionText(questionCard, item) {
 export function createCheatButton(
   item,
   questionCard,
-  currentQuestion,
+  currentQuestionIndex,
   resultText
 ) {
   const showAnswerButton = document.createElement('button');
   showAnswerButton.textContent = 'cheat';
   showAnswerButton.setAttribute(
     'aria-label',
-    'Show answer for question ' + currentQuestion
+    'Show answer for question ' + currentQuestionIndex
   );
   showAnswerButton.classList.add('btn');
   showAnswerButton.classList.add('btn--show-answer');

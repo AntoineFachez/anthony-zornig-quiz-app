@@ -1,9 +1,11 @@
+import { createQuestionCard } from './createQuestionCard.js';
+
 export function createCurrentQuestion(
   mainSection,
-  currentQuestion,
-  currentsStateData,
-  createButtons,
-  correctAnswers,
+  currentQuestionIndex,
+  currentStateData,
+  createButtonArrayCard,
+  countCorrectAnswers,
   correctAnswersText,
   createQuestionCard,
   updateProgressBar,
@@ -11,35 +13,31 @@ export function createCurrentQuestion(
 ) {
   mainSection.innerHTML = '';
 
-  // correctAnswersText.classList.add('question-card--text');
-  // correctAnswersText.setAttribute('aria-label', correctAnswersText);
-
   const currentQuestionNumber = document.createElement('p');
   currentQuestionNumber.classList.add('current-question-number');
-  // currentQuestionNumber.textContent = `Questions ${currentQuestion + 1}`;
-  currentQuestionNumber.textContent = `${currentQuestion + 1}`;
-  // currentQuestionNumber.style.transform = `translateX(${progressPercent}%)`;
 
-  currentQuestionNumber.setAttribute('aria-label', currentQuestion);
-  if (currentQuestion < currentsStateData.length) {
+  currentQuestionNumber.textContent = `Question ${currentQuestionIndex + 1}`;
+  currentQuestionNumber.setAttribute('aria-label', currentQuestionIndex);
+
+  if (currentQuestionIndex < currentStateData.length) {
     const card = createQuestionCard(
-      currentsStateData,
+      currentStateData,
       mainSection,
-      currentsStateData[currentQuestion],
-      currentQuestion,
+      currentStateData[currentQuestionIndex],
+      currentQuestionIndex,
       createCurrentQuestion,
-      createButtons
+      createButtonArrayCard
     );
     mainSection.appendChild(card);
-    // mainSection.appendChild(currentQuestionNumber);
-    currentQuestion++;
-    updateProgressBar(currentsStateData, currentQuestion, progressPercent);
+    mainSection.appendChild(currentQuestionNumber);
+    currentQuestionIndex++;
+    updateProgressBar(currentStateData, currentQuestionIndex, progressPercent);
   } else {
     displayResult(
       mainSection,
-      currentsStateData,
-      currentQuestion,
-      correctAnswers,
+      currentStateData,
+      currentQuestionIndex,
+      countCorrectAnswers,
       correctAnswersText
     );
     allQuestionsAnswered = true;

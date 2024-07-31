@@ -1,9 +1,9 @@
-// export function createButtons(
+// export function createButtonArrayCard(
 //   item,
 //   questionCard,
 //   displayCurrentQuestion,
 //   resultText,
-//   correctAnswers
+//   countCorrectAnswers
 // ) {
 //   const btnWrapper = document.createElement('div');
 //   btnWrapper.classList.add('btn-wrapper');
@@ -21,8 +21,8 @@
 //     multipleChoiceButton.addEventListener('click', () => {
 //       if (possibleAnswer.possibleAnswer === item.answer) {
 //         resultText.textContent = 'Correct!';
-//         correctAnswers++;
-//         console.log(correctAnswers);
+//         countCorrectAnswers++;
+//         console.log(countCorrectAnswers);
 //       } else {
 //         resultText.textContent = 'Incorrect!';
 //       }

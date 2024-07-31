@@ -1,4 +1,4 @@
-import { data } from './data/data.js';
+import { data } from '../data/data.js';
 import { createQuestionCard } from './questionCard/createQuestionCard.js';
 import { updateProgressBar } from './ui/progressBar.js';
 import { displayResult } from './ui/displayResult.js';

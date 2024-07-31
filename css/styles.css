@@ -19,7 +19,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: var(--paddingBodyTop) 1rem 30% 1rem;
+  padding: var(--paddingBodyTop) 1rem 5rem 1rem;
 
   background: linear-gradient(to bottom, #022e2e, #344b25);
 }
@@ -96,7 +96,7 @@ section {
   border-radius: 5px;
   background-color: #518cca;
 
-  background: linear-gradient(to bottom, #5593d4, #4679af);
+  background: linear-gradient(to top, #5593d4, #4679af);
   gap: 0.5rem;
   box-shadow: 1px 1px 1px 1px #192a3bbc;
 }

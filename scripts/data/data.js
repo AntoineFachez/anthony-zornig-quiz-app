@@ -6,7 +6,7 @@ export const data = [
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/en/0/02/Iron_Man_%282008_film%29_poster.jpg',
     imgAlt: 'Iron_Man_%282008_film%29_poster',
-    bookMarkState: false,
+    bookMarkState: true,
     possibleAnswers: [
       { possibleAnswer: 'The Incredible Hulk' },
       { possibleAnswer: 'Iron Man' },
@@ -33,7 +33,7 @@ export const data = [
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/en/4/47/Iron_Man_%28circa_2018%29.png',
     imgAlt: 'Iron_Man_%28circa_2018%29',
-    bookMarkState: false,
+    bookMarkState: true,
     possibleAnswers: [
       { possibleAnswer: 'Tony Stark' },
       { possibleAnswer: 'Bruce Banner' },
@@ -108,7 +108,7 @@ export const data = [
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/en/e/ee/Spider-Man_and_Captain_America_in_Doctor_Doom%27s_Revenge_cover.jpg',
     imgAlt: 'Spider-Man_and_Captain_America_in_Doctor_Doom',
-    bookMarkState: false,
+    bookMarkState: true,
     possibleAnswers: [
       { possibleAnswer: 'Spider-Man: Homecoming' },
       { possibleAnswer: 'Captain America: Civil War' },

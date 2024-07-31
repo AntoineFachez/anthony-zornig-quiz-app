@@ -68,6 +68,17 @@ header .current-view {
   color: #faf0bf;
   letter-spacing: -3px;
   text-transform: uppercase;
+  transition: color 200ms ease-in-out, letter-spacing 200ms ease-in-out;
+}
+.current-view--changed {
+  font-family: 'Marvel', sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 2.3rem;
+  /* color: var(--gradientBottom); */
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  transition: color 200ms ease-in-out, letter-spacing 200ms ease-in-out;
 }
 .main-section {
   width: 100%;

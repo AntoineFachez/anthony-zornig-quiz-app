@@ -90,6 +90,14 @@ export function setCurrentView(appState) {
   const currentViewIndicator = document.getElementById('current-view');
   if (currentViewIndicator) {
     currentViewIndicator.textContent = appState.currentView;
+    setTimeout(() => {
+      currentViewIndicator.classList.add('current-view--changed');
+      currentViewIndicator.classList.remove('current-view');
+    }, 0);
+    setTimeout(() => {
+      currentViewIndicator.classList.add('current-view');
+      currentViewIndicator.classList.remove('current-view--changed');
+    }, 1000);
   } else {
     console.error('current-view element not found');
   }

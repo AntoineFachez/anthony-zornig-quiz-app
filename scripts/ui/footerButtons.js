@@ -4,7 +4,7 @@ export function initHomeButton(appState) {
   const bookMarkButton = document.getElementById('btn-home');
   if (bookMarkButton) {
     bookMarkButton.addEventListener('click', () =>
-      setAppState(appState, 'home')
+      setAppState(appState, 'quiz')
     );
   } else {
     console.error('Bookmark button not found!');
@@ -31,6 +31,5 @@ export function initProfileButton(appState) {
   }
 }
 export function setAppState(appState, newAppState) {
-  console.log(newAppState);
   appState.currentView = newAppState;
 }

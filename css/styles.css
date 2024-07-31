@@ -52,8 +52,22 @@ header p {
   font-style: normal;
   font-size: 2.3rem;
   color: white;
+  line-height: 3rem;
   /* text-transform: uppercase; */
   /* letter-spacing: -4px; */
+}
+header p:before {
+  content: '\00a0 ';
+}
+header .current-view {
+  /* justify-self: flex-end; */
+  font-family: 'Marvel', sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 2.3rem;
+  color: #faf0bf;
+  letter-spacing: -3px;
+  text-transform: uppercase;
 }
 .main-section {
   width: 100%;

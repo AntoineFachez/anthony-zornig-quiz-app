@@ -1,6 +1,5 @@
 import { data } from './data/data.js';
 import { createQuestionCard } from './questionCard/createQuestionCard.js';
-// import { createCurrentQuestion } from './questionCard/createCurrentQuestion.js';
 import { updateProgressBar } from './ui/progressBar.js';
 import { displayResult } from './ui/displayResult.js';
 import { getBookMarkedItems } from './views/bookMarkedItems.js';
@@ -19,10 +18,11 @@ let progressPercent = 0;
 let correctAnswersText;
 let currentsStateData;
 let appState = { currentView: 'quiz' };
-
 const mainSection = document.querySelector('.main-section');
 
 document.addEventListener('DOMContentLoaded', function () {
+  setCurrentView(appState);
+  const bookmarkedArray = getBookMarkedItems();
   const dataUrl = new URL('/data/questions.js', import.meta.url);
   // fetch('../data/questions.json')
   // fetch(
@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
       currentQuestion,
       createCurrentQuestion,
       createButtons
-      // correctAnswers
     );
     mainSection.appendChild(card);
   });
@@ -57,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initHomeButton(appState);
   initBookMarkButton(appState);
   initProfileButton(appState);
-  const bookmarkedArray = getBookMarkedItems();
+
   if (appState.currentView === 'quiz') {
     createCurrentQuestion(
       mainSection,
@@ -82,6 +81,19 @@ document.addEventListener('DOMContentLoaded', function () {
   } else if (appState === 'profile') {
   }
 });
+document.addEventListener('click', (event) => {
+  // Code to handle any click event on the document
+  setCurrentView(appState);
+  console.log(appState);
+});
+export function setCurrentView(appState) {
+  const currentViewIndicator = document.getElementById('current-view');
+  if (currentViewIndicator) {
+    currentViewIndicator.textContent = appState.currentView;
+  } else {
+    console.error('current-view element not found');
+  }
+}
 export function createCurrentQuestion() {
   mainSection.innerHTML = '';
 

@@ -6,7 +6,7 @@ export const data = [
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/en/0/02/Iron_Man_%282008_film%29_poster.jpg',
     imgAlt: 'Iron_Man_%282008_film%29_poster',
-    bookMarkState: true,
+    bookMarkState: false,
     possibleAnswers: [
       { possibleAnswer: 'The Incredible Hulk' },
       { possibleAnswer: 'Iron Man' },
@@ -20,7 +20,7 @@ export const data = [
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/en/7/72/The_Infinity_Stones.jpg',
     imgAlt: 'The_Infinity_Stones',
-    bookMarkState: false,
+    bookMarkState: true,
     possibleAnswers: [
       { possibleAnswer: 'Infinity Stones' },
       { possibleAnswer: 'Cosmic Cubes' },

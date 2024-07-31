@@ -48,6 +48,10 @@ export function createImg(mainSection, item) {
   }
 }
 export function createBookMark(currentsStateData, questionCard, item) {
+  const iconUrl = new URL(
+    'https://raw.githubusercontent.com/AntoineFachez/anthony-zornig-quiz-app/main/assets/icons/',
+    import.meta.url
+  );
   const bookmarkDiv = document.createElement('div');
   bookmarkDiv.id = `bookmark_${item.imgUrl}`; // Set imgUrl as unique ID
   bookmarkDiv.classList.add(`bookmarked`);
@@ -56,7 +60,6 @@ export function createBookMark(currentsStateData, questionCard, item) {
   const bookmarkIcon = document.createElement('img');
   bookmarkIcon.classList.add(`--${item.bookMarkState}`);
 
-  const iconUrl = new URL('/assets/icons/', import.meta.url);
   bookmarkIcon.src =
     item.bookMarkState === false
       ? `${iconUrl}bookmark_transparent.png`
@@ -85,7 +88,7 @@ export function createBookMark(currentsStateData, questionCard, item) {
       console.error('Question not found in data array!');
     }
     // Update the bookmark icon
-    const iconUrl = new URL('/assets/icons/', import.meta.url);
+
     bookmarkIcon.src =
       item.bookMarkState === false
         ? `${iconUrl}bookmark_transparent.png`

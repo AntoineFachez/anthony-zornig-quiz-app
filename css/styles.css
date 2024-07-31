@@ -29,7 +29,7 @@ header {
   width: 100%;
   height: fit-content;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   padding: 0.5rem;
   background: linear-gradient(
     to bottom,
@@ -37,11 +37,23 @@ header {
     var(--gradientBottom)
   );
 }
-h1 {
+header .title {
   font-family: 'Marvel', sans-serif;
-  font-weight: 700;
+  font-weight: 900;
   font-style: normal;
+  font-size: 2.5rem;
   color: white;
+  /* text-transform: uppercase; */
+  letter-spacing: -5px;
+}
+header p {
+  font-family: 'Marvel', sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 2.3rem;
+  color: white;
+  /* text-transform: uppercase; */
+  /* letter-spacing: -4px; */
 }
 .main-section {
   width: 100%;
@@ -68,7 +80,7 @@ h1 {
 .progress-bar-fill {
   height: 100%;
   width: 0%; /* Initial width is 0 */
-  background-color: #9bc063; /* Background color for the empty bar */
+  background-color: #fbca03; /* Background color for the empty bar */
   transition: width 0.3s ease; /* Smooth transition effect */
 }
 .current-question-number {

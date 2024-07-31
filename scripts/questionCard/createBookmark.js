@@ -6,10 +6,13 @@ export function createBookMark(currentsStateData, questionCard, item) {
   bookmarkDiv.classList.add(`bookmarked`);
   const bookmarkIcon = document.createElement('img');
   bookmarkIcon.classList.add(`--${item.bookMarkState}`);
+
+  const iconUrl = new URL('/assets/icons/', import.meta.url);
   bookmarkIcon.src =
     item.bookMarkState === false
-      ? '/scripts/icons/bookmark_transparent.png'
-      : '/scripts/icons/bookmark_filled.png';
+      ? `${iconUrl}bookmark_transparent.png`
+      : `${iconUrl}bookmark_filled.png`;
+
   bookmarkIcon.alt =
     item.bookMarkState === false ? 'Bookmark question' : 'marked question';
 
@@ -40,7 +43,7 @@ export function createBookMark(currentsStateData, questionCard, item) {
     } else {
       console.error('Question not found in data array!');
     }
-    const iconUrl = new URL('/scripts/icons/', import.meta.url);
+    const iconUrl = new URL('/assets/icons/', import.meta.url);
     bookmarkIcon.src =
       item.bookMarkState === false
         ? `${iconUrl}bookmark_transparent.png`

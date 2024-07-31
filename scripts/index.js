@@ -140,17 +140,7 @@ export function createCurrentQuestion() {
     allQuestionsAnswered = true;
   }
 }
-createCurrentQuestion(
-  mainSection,
-  currentQuestion,
-  currentsStateData,
-  createButtons,
-  correctAnswers,
-  correctAnswersText,
-  createQuestionCard,
-  updateProgressBar,
-  progressPercent
-);
+
 export function createButtons(
   item,
   questionCard,

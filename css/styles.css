@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Send+Flowers&family=VT323&display=swap');
 :root {
   --paddingBodyTop: 6rem;
+  --gradientTop: #9c1614;
+  --gradientBottom: #a32222;
+  --border-radius: 5px;
 }
 * {
   box-sizing: border-box;
@@ -17,7 +20,8 @@ body {
   justify-content: center;
   align-items: center;
   padding: var(--paddingBodyTop) 1rem 30% 1rem;
-  background-color: #022;
+
+  background: linear-gradient(to bottom, #022e2e, #344b25);
 }
 header {
   position: fixed;
@@ -27,7 +31,11 @@ header {
   display: flex;
   justify-content: space-evenly;
   padding: 0.5rem;
-  background-color: #e23636;
+  background: linear-gradient(
+    to bottom,
+    var(--gradientTop),
+    var(--gradientBottom)
+  );
 }
 h1 {
   font-family: 'Marvel', sans-serif;
@@ -45,7 +53,7 @@ h1 {
   align-items: center;
   /* background-color: white; */
   /* gap: 2rem; */
-  overflow: auto;
+  overflow: visible;
 }
 .progress-bar {
   position: absolute;
@@ -87,8 +95,10 @@ section {
   padding: 1rem;
   border-radius: 5px;
   background-color: #518cca;
+
+  background: linear-gradient(to bottom, #5593d4, #4679af);
   gap: 0.5rem;
-  box-shadow: #022;
+  box-shadow: 1px 1px 1px 1px #192a3bbc;
 }
 .bookmarked {
   position: absolute;
@@ -117,11 +127,13 @@ section {
 }
 .question-card--image {
   width: 100%;
-  max-width: 200px;
+  max-width: 50ch;
   height: 100%;
   max-height: 400px;
   padding: 1rem;
-  object-fit: contain;
+  object-fit: cover;
+  /* border-radius: var(--border-radius); */
+  /* box-shadow: 1px 1px #192a3bbc; */
 }
 .question-card--text {
   font-family: 'Marvel', sans-serif;
@@ -149,7 +161,9 @@ section {
 }
 .btn {
   /* box-shadow: none; */
-  border-radius: 5px;
+
+  border-radius: var(--border-radius);
+  /* box-shadow: 1px 1px #192a3bbc; */
   padding: 0.2rem 0.6rem;
   font-family: 'Marvel', sans-serif;
   font-size: 1rem;
@@ -214,5 +228,9 @@ footer {
   display: flex;
   justify-content: space-evenly;
   padding: 1rem;
-  background-color: #e23636;
+  background: linear-gradient(
+    to top,
+    var(--gradientTop),
+    var(--gradientBottom)
+  );
 }

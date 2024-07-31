@@ -16,7 +16,8 @@ export function createCurrentQuestion(
 
   const currentQuestionNumber = document.createElement('p');
   currentQuestionNumber.classList.add('current-question-number');
-  currentQuestionNumber.textContent = currentQuestion + 1;
+  // currentQuestionNumber.textContent = `Questions ${currentQuestion + 1}`;
+  currentQuestionNumber.textContent = `${currentQuestion + 1}`;
   // currentQuestionNumber.style.transform = `translateX(${progressPercent}%)`;
 
   currentQuestionNumber.setAttribute('aria-label', currentQuestion);
@@ -30,7 +31,7 @@ export function createCurrentQuestion(
       createButtons
     );
     mainSection.appendChild(card);
-    mainSection.appendChild(currentQuestionNumber);
+    // mainSection.appendChild(currentQuestionNumber);
     currentQuestion++;
     updateProgressBar(currentsStateData, currentQuestion, progressPercent);
   } else {

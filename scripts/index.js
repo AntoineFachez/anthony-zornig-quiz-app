@@ -90,7 +90,9 @@ export function createCurrentQuestion() {
 
   const currentQuestionNumber = document.createElement('p');
   currentQuestionNumber.classList.add('current-question-number');
-  currentQuestionNumber.textContent = currentQuestion + 1;
+  // currentQuestionNumber.textContent = currentQuestion + 1;
+
+  currentQuestionNumber.textContent = `Question ${currentQuestion + 1}`;
   // currentQuestionNumber.style.transform = `translateX(${progressPercent}%)`;
   currentQuestionNumber.setAttribute('aria-label', currentQuestion);
 

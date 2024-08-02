@@ -2,13 +2,9 @@
 import { createButtonArrayCard } from './createButtons.js';
 // // import { createBookMark } from '../questionCard/createBookmark.js';
 
-export function createQuestionCard(
-  mainSection,
-  quizState,
-  item
-  // createCurrentQuestion,
-  // createButtonArrayCard
-) {
+export function createQuestionCard(quizState, item) {
+  const mainSection = document.querySelector('main');
+  mainSection.innerHTML = '';
   const questionCard = document.createElement('section');
   questionCard.classList.add('question-card');
 
@@ -16,8 +12,15 @@ export function createQuestionCard(
   createImg(questionCard, item);
   createQuestionText(questionCard, item);
   const resultText = createResultText(mainSection, questionCard);
-  createButtonArrayCard(item, questionCard, resultText);
+  createButtonArrayCard(
+    quizState,
+    questionCard,
+    resultText,
+    createQuestionCard
+  );
   createCheatButton(item, questionCard, quizState);
+
+  mainSection.appendChild(questionCard);
 
   return questionCard;
 }

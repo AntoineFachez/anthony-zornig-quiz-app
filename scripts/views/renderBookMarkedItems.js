@@ -1,4 +1,4 @@
-import { quizState } from '../index.js';
+import { manageDataLS, quizState } from '../../data/data.js';
 import { createQuestionCard } from '../questionCard/createQuestionCard.js';
 import { createCurrentQuestion } from '../questionCard/createCurrentQuestion.js';
 
@@ -27,7 +27,7 @@ export function renderBookMarked() {
 
   const bookmarkedQuestions = [];
   quizState.bookmarked.forEach((item) => {
-    bookmarkedQuestions.push(createQuestionCard(mainSection, quizState, item));
+    bookmarkedQuestions.push(createQuestionCard(quizState, item));
   });
   // console.log(bookmarkedQuestions);
   if (bookmarkedQuestions.length > 0) {

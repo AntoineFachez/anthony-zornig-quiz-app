@@ -1,10 +1,12 @@
+import { renderQuiz } from '../views/renderQuiz.js';
+
 export function createButtonArrayCard(
-  item,
+  quizState,
   questionCard,
-  displayCurrentQuestion,
   resultText,
-  countCorrectAnswers
+  createQuestionCard
 ) {
+  const item = quizState.currentStateData[quizState.currentQuestionIndex];
   const btnWrapper = document.createElement('div');
   btnWrapper.classList.add('btn-wrapper');
 
@@ -23,7 +25,7 @@ export function createButtonArrayCard(
     multipleChoiceButton.addEventListener('click', () => {
       if (possibleAnswer.possibleAnswer === item.answer) {
         resultText.textContent = 'Correct!';
-        countCorrectAnswers++;
+        quizState.countCorrectAnswers++;
       } else {
         resultText.textContent = 'Incorrect!';
       }
@@ -31,7 +33,9 @@ export function createButtonArrayCard(
       questionCard.querySelectorAll('button').forEach((btn) => {
         btn.disabled = true;
       });
-      setTimeout(displayCurrentQuestion, 1000);
+      quizState.currentQuestionIndex++;
+      console.log(quizState);
+      setTimeout(() => renderQuiz(), 1000);
     });
     btnWrapper.appendChild(multipleChoiceButton);
 

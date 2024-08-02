@@ -252,3 +252,12 @@ export function manageDataLS() {
   }
   return currentStateData;
 }
+export const quizState = {
+  allQuestionsAnswered: false,
+  currentStateData: manageDataLS(),
+  bookmarked: [],
+  currentQuestionIndex: 0,
+  countCorrectAnswers: 0,
+  progressPercent: 0,
+  correctAnswersText: '',
+};

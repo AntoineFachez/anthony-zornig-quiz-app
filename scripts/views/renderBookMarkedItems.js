@@ -1,4 +1,4 @@
-import { quizState } from '../../data/data.js';
+import { manageDataLS, quizState } from '../../data/data.js';
 import { createQuestionCard } from '../questionCard/createQuestionCard.js';
 
 let currentStateData;

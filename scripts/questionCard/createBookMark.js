@@ -1,4 +1,8 @@
-import { getBookMarkedItems } from '../views/renderBookMarkedItems.js';
+import { getCurrentAppState } from '../states/appState.js';
+import {
+  getBookMarkedItems,
+  renderBookMarked,
+} from '../views/renderBookMarkedItems.js';
 
 export function createBookMark(quizState, questionCard, item) {
   const iconUrl = new URL(
@@ -38,8 +42,6 @@ export function createBookMark(quizState, questionCard, item) {
         'quizData',
         JSON.stringify(quizState.currentStateData)
       );
-      // Get the current Bookmark states from LS
-      getBookMarkedItems();
     } else {
       console.error('Question not found in data array!');
     }
@@ -52,6 +54,11 @@ export function createBookMark(quizState, questionCard, item) {
 
     bookmarkIcon.alt =
       item.bookMarkState === false ? 'Bookmark question' : 'marked question';
+    // Get the current Bookmark states from LS
+    getBookMarkedItems();
+    if (getCurrentAppState.currentView === 'bookmarked') {
+      renderBookMarked();
+    }
   });
 
   bookmarkDiv.appendChild(bookmarkIcon);

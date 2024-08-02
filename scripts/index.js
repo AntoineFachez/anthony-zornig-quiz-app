@@ -1,15 +1,18 @@
 import { data } from '../data/data.js';
 // import { createCurrentQuestion } from './questionCard/createCurrentQuestion.js';
 import { createQuestionCard } from './questionCard/createQuestionCard.js';
-import { updateProgressBar } from './ui/progressBar.js';
-import { displayResult } from './ui/displayResult.js';
+import { updateProgressBar } from './renderUIElements/progressBar.js';
+import { displayResult } from './renderUIElements/displayResult.js';
 import { getBookMarkedItems } from './views/bookMarkedItems.js';
-import { setCurrentView, setInitialAppState } from './ui/currentView.js';
+import {
+  setCurrentView,
+  setInitialAppState,
+} from './renderUIElements/currentView.js';
 import {
   initHomeButton,
   initBookMarkButton,
   initProfileButton,
-} from './ui/footerButtons.js';
+} from './renderUIElements/footerButtons.js';
 
 import { displayAllBookMarked } from './views/bookMarkedItems.js';
 // import { createButtonArrayCard } from './createButtonArrayCard.js';

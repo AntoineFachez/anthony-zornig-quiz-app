@@ -1,6 +1,5 @@
-// import { getBookMarkedItems } from '../views/bookMarkedItems.js';
+import { createBookMark } from './createBookMark.js';
 import { createButtonArrayCard } from './createButtons.js';
-// // import { createBookMark } from '../questionCard/createBookmark.js';
 
 export function createQuestionCard(quizState, item) {
   const mainSection = document.querySelector('main');
@@ -8,7 +7,7 @@ export function createQuestionCard(quizState, item) {
   const questionCard = document.createElement('section');
   questionCard.classList.add('question-card');
 
-  //   createBookMark(currentStateData, questionCard, item);
+  createBookMark(quizState, questionCard, item);
   createImg(questionCard, item);
   createQuestionText(questionCard, item);
   const resultText = createResultText(mainSection, questionCard);
@@ -51,60 +50,6 @@ export function createImg(questionCard, item) {
     questionCard.appendChild(img);
   }
 }
-// export function createBookMark(currentStateData, questionCard, item) {
-//   const iconUrl = new URL(
-//     'https://raw.githubusercontent.com/AntoineFachez/anthony-zornig-quiz-app/main/assets/icons/',
-//     import.meta.url
-//   );
-//   const bookmarkDiv = document.createElement('div');
-//   bookmarkDiv.id = `bookmark_${item.imgUrl}`; // Set imgUrl as unique ID
-//   bookmarkDiv.classList.add(`bookmarked`);
-
-//   // Create bookmark icon
-//   const bookmarkIcon = document.createElement('img');
-//   bookmarkIcon.classList.add(`--${item.bookMarkState}`);
-
-//   bookmarkIcon.src =
-//     item.bookMarkState === false
-//       ? `${iconUrl}bookmark_transparent.png`
-//       : `${iconUrl}bookmark_filled.png`;
-
-//   bookmarkIcon.alt =
-//     item.bookMarkState === false ? 'Bookmark question' : 'marked question';
-
-//   // Toggle state
-//   bookmarkIcon.addEventListener('click', () => {
-//     // Find the question object in the data array
-//     const questionIndex = currentStateData.findIndex(
-//       (q) => q.imgUrl === item.imgUrl
-//     );
-
-//     if (questionIndex !== -1) {
-//       // Toggle the bookmark state in the data array
-//       currentStateData[questionIndex].bookMarkState =
-//         !currentStateData[questionIndex].bookMarkState;
-
-//       // Save the entire data array to LS
-//       localStorage.setItem('quizData', JSON.stringify(currentStateData));
-//       // Get the current Bookmark states from LS
-//       getBookMarkedItems();
-//     } else {
-//       console.error('Question not found in data array!');
-//     }
-//     // Update the bookmark icon
-
-//     bookmarkIcon.src =
-//       item.bookMarkState === false
-//         ? `${iconUrl}bookmark_transparent.png`
-//         : `${iconUrl}bookmark_filled.png`;
-
-//     bookmarkIcon.alt =
-//       item.bookMarkState === false ? 'Bookmark question' : 'marked question';
-//   });
-
-//   bookmarkDiv.appendChild(bookmarkIcon);
-//   questionCard.appendChild(bookmarkDiv);
-// }
 
 export function createCheatButton(item, questionCard, quizState) {
   const showAnswerButton = document.createElement('button');

@@ -31,7 +31,7 @@ const bookmarkedArray = getBookMarkedItems();
 const currentQuestionNumber = document.createElement('p');
 currentQuestionNumber.classList.add('current-question-number');
 
-const branchNames = ['main', 'features'];
+const branchNames = ['main', 'features', 'ghWorkflow'];
 
 createBranchSelector(branchNames);
 document.addEventListener('DOMContentLoaded', function () {

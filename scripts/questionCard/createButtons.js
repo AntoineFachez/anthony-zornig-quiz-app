@@ -10,6 +10,8 @@ export function createButtonArrayCard(
 
   item.possibleAnswers.forEach((possibleAnswer) => {
     const multipleChoiceButton = document.createElement('button');
+    multipleChoiceButton.type = 'button';
+
     multipleChoiceButton.textContent = possibleAnswer.possibleAnswer;
     multipleChoiceButton.classList.add('btn');
     multipleChoiceButton.classList.add('btn--multiple-choice');
@@ -22,7 +24,6 @@ export function createButtonArrayCard(
       if (possibleAnswer.possibleAnswer === item.answer) {
         resultText.textContent = 'Correct!';
         countCorrectAnswers++;
-        console.log(countCorrectAnswers);
       } else {
         resultText.textContent = 'Incorrect!';
       }

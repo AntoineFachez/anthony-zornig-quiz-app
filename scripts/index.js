@@ -7,7 +7,7 @@ import { setCurrentViewIndicator } from './renderUIElements/currentViewIndicator
 import { initFooterButtons } from './renderUIElements/footerButtons.js';
 import { getBookMarkedItems } from './views/renderBookMarkedItems.js';
 
-let initialAppState = { currentView: 'profile' };
+let initialAppState = { currentView: 'quiz' };
 
 export const quizState = {
   allQuestionsAnswered: false,

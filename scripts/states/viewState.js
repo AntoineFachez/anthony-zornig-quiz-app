@@ -10,7 +10,7 @@ export function setNewViewState(currentAppState) {
   setCurrentViewIndicator(currentAppState);
   setButtonClass(currentAppState);
 
-  if (currentAppState.currentView === 'home') {
+  if (currentAppState.currentView === 'quiz') {
     renderQuiz();
   } else if (currentAppState.currentView === 'bookmarked') {
     renderBookMarked();

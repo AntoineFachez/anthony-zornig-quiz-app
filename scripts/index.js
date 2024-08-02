@@ -15,6 +15,7 @@ import {
 } from './renderUIElements/footerButtons.js';
 
 import { displayAllBookMarked } from './views/bookMarkedItems.js';
+import { createBranchSelector } from './renderUIElements/gitBranchSelector.js';
 // import { createButtonArrayCard } from './createButtonArrayCard.js';
 
 let currentQuestionIndex = 0;
@@ -29,7 +30,7 @@ const bookmarkedArray = getBookMarkedItems();
 
 const currentQuestionNumber = document.createElement('p');
 currentQuestionNumber.classList.add('current-question-number');
-
+createBranchSelector(branchNames);
 document.addEventListener('DOMContentLoaded', function () {
   setCurrentView(appState);
   if (!localStorage.getItem('quizData')) {

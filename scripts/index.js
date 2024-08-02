@@ -1,10 +1,10 @@
 import { manageDataLS } from '../data/data.js';
+// import { createBranchSelector } from './renderUIElements/gitBranchSelector.js';
 
 import { setInitialAppState, getCurrentAppState } from './states/appState.js';
 import { availableAppStates } from './states/availableStates.js';
 
 import { setCurrentViewIndicator } from './renderUIElements/currentViewIndicator.js';
-import { createBranchSelector } from './renderUIElements/gitBranchSelector.js';
 import { initFooterButtons } from './renderUIElements/footerButtons.js';
 import { getBookMarkedItems } from './views/renderBookMarkedItems.js';
 
@@ -28,7 +28,7 @@ export function initApp() {
   const branchNames = ['main', 'features'];
 
   // Call the createBranchSelector function
-  createBranchSelector(branchNames);
+  // createBranchSelector(branchNames);
   quizState.bookmarked = getBookMarkedItems(); //* counter in the footerButton
 
   setInitialAppState(initialAppState);

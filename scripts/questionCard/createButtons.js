@@ -1,11 +1,6 @@
 import { renderQuiz } from '../views/renderQuiz.js';
 
-export function createButtonArrayCard(
-  quizState,
-  questionCard,
-  resultText,
-  createQuestionCard
-) {
+export function createButtonArrayCard(quizState, questionCard, resultText) {
   const item = quizState.currentStateData[quizState.currentQuestionIndex];
   const btnWrapper = document.createElement('div');
   btnWrapper.classList.add('btn-wrapper');
@@ -33,9 +28,9 @@ export function createButtonArrayCard(
       questionCard.querySelectorAll('button').forEach((btn) => {
         btn.disabled = true;
       });
+
       quizState.currentQuestionIndex++;
-      console.log(quizState);
-      setTimeout(() => renderQuiz(), 1000);
+      setTimeout(() => renderQuiz(), 600);
     });
     btnWrapper.appendChild(multipleChoiceButton);
 

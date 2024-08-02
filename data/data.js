@@ -1,5 +1,6 @@
 let currentStateData = [];
 const lineBreaker = '<br/>';
+
 export const data = [
   {
     question:

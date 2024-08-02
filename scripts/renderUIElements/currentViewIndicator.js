@@ -1,11 +1,4 @@
-// import { createCurrentQuestion, createButtonArrayCard } from '../index.js';
-// import { createQuestionCard } from '../questionCard/createQuestionCard.js';
-// import { displayAllBookMarked } from '../views/bookMarkedItems.js';
-// import { data } from '../../data/data.js';
-// import { renderProfile } from './renderProfile.js';
-
 export function setCurrentViewIndicator(appState) {
-  // console.log(appState);
   const currentViewIndicator = document.getElementById(
     'current-view-indicator'
   );

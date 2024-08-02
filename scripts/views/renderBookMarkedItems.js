@@ -1,6 +1,5 @@
-import { manageDataLS, quizState } from '../../data/data.js';
+import { quizState } from '../../data/data.js';
 import { createQuestionCard } from '../questionCard/createQuestionCard.js';
-import { createCurrentQuestion } from '../questionCard/createCurrentQuestion.js';
 
 let currentStateData;
 const mainSection = document.querySelector('.main-section');

@@ -1,5 +1,3 @@
-// import { displayAllBookMarked } from '../views/bookMarkedItems.js';
-
 import { setNewViewState } from '../states/viewState.js';
 
 const footer = document.getElementById('footer');

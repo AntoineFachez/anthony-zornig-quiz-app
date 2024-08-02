@@ -1,5 +1,7 @@
 import { setNewViewState } from './viewState.js';
 
+export let initialAppState = { currentView: 'quiz' };
+
 let currentAppState = {};
 const mainSection = document.querySelector('.main-section');
 

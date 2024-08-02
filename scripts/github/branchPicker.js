@@ -1,50 +1,20 @@
 export async function deployBranch(branchName) {
-  const response = await fetch(
-    'https://api.github.com/repos/AntoineFachez/anthony-zornig-quiz-app/issues',
-    {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer `,
+  try {
+    // Update a configuration file with the selected branch name
+    // ... (Your logic to update the file, e.g., using the Fetch API to write to a file on GitHub)
 
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        title: 'Deploy Branch Request',
-        body: branchName,
-      }),
-    }
-  )
-    // ... (Handle response)
-    .then((response) => {
-      if (response.ok) {
-        // Check if the request was successful (status code 200-299)
-        // Success:
-        return response.json(); // Parse the JSON response from GitHub
-      } else {
-        // Error:
-        throw new Error(
-          `Error creating issue: ${response.status} ${response.statusText}`
-        );
-      }
-    })
-    .then((data) => {
-      // Handle the successful response (data contains the issue details)
-      console.log('Issue created:', data);
-      // 1. Update UI to show a success message
-      const successMessage = document.createElement('p');
-      successMessage.textContent = `Deployment request for branch "${branchName}" submitted successfully.`;
-      document.body.appendChild(successMessage);
+    // Commit and push the changes
+    // ... (Your git commit and push logic, you might need to use a library like isomorphic-git for this)
 
-      // 2. (Optional) Hide the branch selection dropdown or disable it temporarily
-    })
-    .catch((error) => {
-      // Handle errors
-      console.error('Error:', error);
-      // 1. Show an error message in the UI
-      const errorMessage = document.createElement('p');
-      errorMessage.textContent = `Error submitting deployment request: ${error.message}`;
-      document.body.appendChild(errorMessage);
-
-      // 2. (Optional) Log the error to a service for further analysis
-    });
+    // Success message (optional)
+    const successMessage = document.createElement('p');
+    successMessage.textContent = `Deployment triggered for branch "${branchName}".`;
+    document.body.appendChild(successMessage);
+  } catch (error) {
+    // Error handling
+    console.error('Error:', error);
+    const errorMessage = document.createElement('p');
+    errorMessage.textContent = `Error triggering deployment: ${error.message}`;
+    document.body.appendChild(errorMessage);
+  }
 }

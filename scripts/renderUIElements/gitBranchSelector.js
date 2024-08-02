@@ -3,8 +3,8 @@ import { deployBranch } from '../github/branchPicker.js';
 const footer = document.querySelector('footer');
 export function createBranchSelector(branchNames) {
   const selectElement = document.createElement('select');
-  selectElement.id = 'cars'; // Set the ID
-  selectElement.name = 'cars'; // Set the name
+  selectElement.id = 'branchSelector'; // Set the ID
+  selectElement.name = 'branchSelector'; // Set the name
 
   // 2. Populate the options
   for (const branchName of branchNames) {

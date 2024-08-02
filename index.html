@@ -5,29 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
 
+    <script src="scripts/index.js" type="module" defer></script>
     <title>Marvelous Marvel World</title>
   </head>
   <body>
     <header>
       <p class="title">MARVEL</p>
       <p class="">'ous</p>
-      <pre class=""></pre>
-      <p id="current-view" class="current-view"></p>
+      <p id="current-view-indicator" class="current-view-indicator"></p>
     </header>
 
     <div class="progress-bar">
       <div class="progress-bar-fill"></div>
     </div>
     <main class="main-section"></main>
-    <footer>
-      <pre>Branch:<br/>Main</pre>
-      <button id="btn-home" class="btn btn--nav --home">home</button>
-      <button id="btn-bookmark" class="btn btn--nav --bookmark">
-        bookmark
-      </button>
-      <button id="btn-profile" class="btn btn--nav --profile">profile</button>
+    <div id="toggleDarkMode" class="settings">
+      <label class="switch"
+        ><input type="checkbox" /><span class="slider"></span
+      ></label>
+    </div>
+    <footer id="footer">
+      <pre>Branch:<br/>Feature</pre>
     </footer>
-
-    <script src="scripts/index.js" type="module" defer></script>
   </body>
 </html>

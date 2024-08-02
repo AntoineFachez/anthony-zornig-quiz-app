@@ -1,13 +1,24 @@
 export async function deployBranch(branchName) {
-  //   const accessToken = process.env.GITHUB_ACCESS_TOKEN; // Get token from environment variable
+  const accessToken = await fetch('/env')
+    .then((response) => response.text())
+    .then((text) => {
+      console.log(text);
+      const env = text.split('\n').reduce((acc, line) => {
+        const [key, value] = line.split('=');
+        acc[key] = value;
+        return acc;
+      }, {});
+      window.env = env;
+    });
+  console.log(accessToken);
 
   const response = await fetch(
     'https://api.github.com/repos/AntoineFachez/anthony-zornig-quiz-app/issues',
     {
       method: 'POST',
       headers: {
-        // Authorization: `Bearer ${accessToken}`,
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer ${accessToken}`,
+
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({

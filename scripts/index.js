@@ -20,14 +20,13 @@ export const quizState = {
   progressPercent: 0,
   correctAnswersText: '',
 };
-const branchNames = ['main', 'develop', 'feature-x'];
 
 export function initApp() {
   //* render UIElements
   setCurrentViewIndicator(initialAppState); //* in the header
   initFooterButtons(availableAppStates, initialAppState);
-  const branchNames = ['main', 'features'];
 
+  const branchNames = ['main', 'features', 'ghWorkflow'];
   // Call the createBranchSelector function
   createBranchSelector(branchNames);
   quizState.bookmarked = getBookMarkedItems(); //* counter in the footerButton

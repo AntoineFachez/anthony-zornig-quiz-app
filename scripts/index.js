@@ -1,4 +1,4 @@
-import { manageDataLS } from '../../data/data.js';
+import { manageDataLS } from '../data/data.js';
 
 import { setInitialAppState, getCurrentAppState } from './states/appState.js';
 import { availableAppStates } from './states/availableStates.js';

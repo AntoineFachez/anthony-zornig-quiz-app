@@ -1,0 +1,5 @@
+- name: Deploy
+  run: |
+    curl -X POST \
+    -H "Authorization: Bearer ${{ secrets.GITHUB_ACCESS_TOKEN }}" \
+    # ... (rest of your curl command for GitHub API)

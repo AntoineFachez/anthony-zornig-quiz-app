@@ -30,6 +30,9 @@ const bookmarkedArray = getBookMarkedItems();
 
 const currentQuestionNumber = document.createElement('p');
 currentQuestionNumber.classList.add('current-question-number');
+
+const branchNames = ['main', 'features'];
+
 createBranchSelector(branchNames);
 document.addEventListener('DOMContentLoaded', function () {
   setCurrentView(appState);

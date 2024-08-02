@@ -24,7 +24,6 @@ export function getBookMarkedItems() {
 
 export function renderBookMarked() {
   mainSection.innerHTML = '';
-  console.log(quizState);
 
   const bookmarkedQuestions = [];
   quizState.bookmarked.forEach((item) => {

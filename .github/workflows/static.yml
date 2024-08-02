@@ -23,6 +23,9 @@ concurrency:
 
 jobs:
   # Single deploy job since we're just deploying
+
+
+     
   deploy:
     environment:
       name: github-pages
@@ -41,3 +44,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+     - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
+        with:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}

@@ -1,4 +1,4 @@
-import { manageDataLS, quizState } from '../../data/data.js';
+import { manageDataLS, quizState } from '../../data/dataFortnite.js';
 import { createQuestionCard } from '../questionCard/createQuestionCard.js';
 
 let currentStateData;

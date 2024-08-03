@@ -1,4 +1,4 @@
-import { manageDataLS, quizState } from '../../data/data.js';
+import { manageDataLS, quizState } from '../../data/dataFortnite.js';
 import { createQuestionCard } from '../questionCard/createQuestionCard.js';
 import { updateProgressBar } from '../renderUIElements/progressBar.js';
 import { displayResult } from './displayResult.js';

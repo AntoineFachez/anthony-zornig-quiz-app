@@ -1,5 +1,5 @@
-import { profileData } from '../../data/data.js';
-
+// import { profileData} from '../../data/dataMCU.js';
+import { profileData } from '../../data/dataFortnite.js';
 const mainSection = document.querySelector('.main-section');
 
 export function renderProfile() {

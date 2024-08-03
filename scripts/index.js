@@ -1,7 +1,7 @@
 import { availableAppStates } from './states/availableStates.js';
 import { initialAppState, setInitialAppState } from './states/appState.js';
 
-import { quizState } from '../data/data.js';
+import { manageDataLS, quizState } from '../../data/dataFortnite.js';
 
 import { setCurrentViewIndicator } from './renderUIElements/currentViewIndicator.js';
 import { initFooterButtons } from './renderUIElements/footerButtons.js';

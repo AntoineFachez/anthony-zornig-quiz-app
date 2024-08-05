@@ -1,5 +1,4 @@
-let currentStateData = [];
-const lineBreaker = '<br/>';
+import { manageLSData } from '../scripts/states/manageLSData.js';
 
 export const data = [
   {
@@ -72,35 +71,78 @@ export const data = [
       { possibleAnswer: 'Galactus' },
     ],
   },
-];
-export const profileData = {
-  name: 'Anthony Zornig',
-  about: `Hi there! ${lineBreaker}I am a FischKopp.${lineBreaker} ${lineBreaker} I ❤️ `,
-  links: [
-    {
-      href: 'https://github.com/AntoineFachez',
-      textContent: 'Visit my GitHub',
-      styleClass: 'link-github',
-    },
-    {
-      href: 'https://www.linkedin.com/in/anthony-zornig-02b784239/',
-      textContent: 'Visit my Linkedin',
-      styleClass: 'link-linked',
-    },
-  ],
-  profileImage: {
-    url: 'https://avatars.githubusercontent.com/u/85788734?s=400&u=aa83a216d2888dcf99a7a7c9704d6621cfb4a900&v=4',
-    alt: 'antoine fachez',
-  },
-  misc: {
-    images: [
-      {
-        url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png',
-        alt: 'JavaScript Logo',
-      },
+
+  {
+    question:
+      'Welche Heavy-Metal-Band kooperierte mit Fortnite für ein In-Game-Konzert?',
+    answer: 'Metallica',
+    imgUrl:
+      'https://www.pcgames.de/screenshots/1000x562/2024/06/Fortnite-Festival-Season-4-Metallica-4-pc-games_artwork.jpg',
+    imgAlt: 'Metallica Fortnite',
+    bookMarkState: false,
+    possibleAnswers: [
+      { possibleAnswer: 'Slipknot' },
+      { possibleAnswer: 'Metallica' },
+      { possibleAnswer: 'Iron Maiden' },
     ],
   },
-};
+  {
+    question:
+      'Welcher YouTuber veranstaltete das "Extreme Survival Challenge"-Event in Fortnite?',
+    answer: 'MrBeast',
+    imgUrl:
+      'https://cdn2.unrealengine.com/fortnite-mrbeast-1920x1080-a89cbc5bdf9c.jpg',
+    imgAlt: 'MrBeast Fortnite',
+    bookMarkState: false,
+    possibleAnswers: [
+      { possibleAnswer: 'Ninja' },
+      { possibleAnswer: 'MrBeast' },
+      { possibleAnswer: 'LazarBeam' },
+    ],
+  },
+  {
+    question:
+      'In welcher Saison wurde der "Nullpunkt" erstmals in Fortnite enthüllt?',
+    answer: 'Kapitel 2, Staffel 5',
+    imgUrl:
+      'https://cdn2.unrealengine.com/16br-placeholderv2-blog-newsheader-1920x600-1920x600-504cbd3b3c87.jpg',
+    imgAlt: 'Fortnite Zero Point',
+    bookMarkState: false,
+    possibleAnswers: [
+      { possibleAnswer: 'Kapitel 1, Staffel X' },
+      { possibleAnswer: 'Kapitel 2, Staffel 4' },
+      { possibleAnswer: 'Kapitel 2, Staffel 5' },
+    ],
+  },
+  {
+    question: 'Welches Unternehmen entwickelt Fortnite?',
+    answer: 'Epic Games',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Epic_Games_logo.svg/1024px-Epic_Games_logo.svg.png',
+    imgAlt: 'Epic Games',
+    bookMarkState: false,
+    possibleAnswers: [
+      { possibleAnswer: 'EA Games' },
+      { possibleAnswer: 'Ubisoft' },
+      { possibleAnswer: 'Epic Games' },
+    ],
+  },
+  {
+    question:
+      'Mit welchem berühmten Film-Franchise kooperierte Fortnite für das "Endgame"-Event?',
+    answer: 'Avengers',
+    imgUrl:
+      'https://www.ingame.de/assets/images/2/725/2725097-52603882-fortnite-avengers-11-1S70.jpg',
+    imgAlt: 'Fortnite Avengers Endgame',
+    bookMarkState: false,
+    possibleAnswers: [
+      { possibleAnswer: 'Star Wars' },
+      { possibleAnswer: 'Jurassic Park' },
+      { possibleAnswer: 'Avengers' },
+    ],
+  },
+];
+
 export const colorPaletteSeason6 = [
   '#2a095f',
   '#3d02bd',
@@ -116,18 +158,9 @@ export const colorPalette = [
   '#f3af1',
 ];
 
-export function manageDataLS() {
-  if (!localStorage.getItem('quizData')) {
-    localStorage.setItem('quizData', JSON.stringify(data));
-    currentStateData = data;
-  } else {
-    currentStateData = JSON.parse(localStorage.getItem('quizData'));
-  }
-  return currentStateData;
-}
-export const quizState = {
+export const quizStateFortnite = {
   allQuestionsAnswered: false,
-  currentStateData: manageDataLS(),
+  currentStateData: manageLSData(data, 'quizDataFortnite'),
   bookmarked: [],
   currentQuestionIndex: 0,
   countCorrectAnswers: 0,

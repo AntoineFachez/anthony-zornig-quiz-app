@@ -1,4 +1,4 @@
-import { getBookMarkedItems } from '../views/renderBookMarkedItems.js';
+import { getBookMarkedItems } from '../scripts/views/renderBookMarkedItems.js';
 
 export const availableAppStates = [
   {

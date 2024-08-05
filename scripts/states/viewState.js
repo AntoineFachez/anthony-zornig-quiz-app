@@ -1,3 +1,4 @@
+import { quizStateProfessionalSoccer } from '../../data/dataProfessionalSoccer.js';
 import { setCurrentViewIndicator } from '../renderUIElements/currentViewIndicator.js';
 import { setButtonClass } from '../renderUIElements/footerButtons.js';
 
@@ -6,7 +7,6 @@ import { renderBookMarked } from '../views/renderBookMarkedItems.js';
 import { renderProfile } from '../views/renderProfile.js';
 
 export function setNewViewState(currentAppState) {
-  // setNewAppState(currentAppState);
   setCurrentViewIndicator(currentAppState);
   setButtonClass(currentAppState);
 

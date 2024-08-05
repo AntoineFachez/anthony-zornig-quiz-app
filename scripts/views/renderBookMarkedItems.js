@@ -1,4 +1,5 @@
-import { manageDataLS, quizState } from '../../data/dataFortnite.js';
+// import { quizStateMCU } from '../../data/dataMCU.js';
+import { currentQuizState } from './renderQuiz.js';
 import { createQuestionCard } from '../questionCard/createQuestionCard.js';
 
 let currentStateData;
@@ -7,10 +8,10 @@ const bookmarkedArray = [];
 
 export function getBookMarkedItems() {
   const bookMarkButton = document.querySelector('.--bookmarked');
-  if (!localStorage.getItem('quizData')) {
+  if (!localStorage.getItem('quizDataMCU')) {
     currentStateData = data;
   } else {
-    currentStateData = JSON.parse(localStorage.getItem('quizData'));
+    currentStateData = JSON.parse(localStorage.getItem('quizDataMCU'));
   }
   const bmArray = currentStateData.filter(
     (item) => item.bookMarkState === true
@@ -25,8 +26,8 @@ export function renderBookMarked() {
   mainSection.innerHTML = '';
 
   const bookmarkedQuestions = [];
-  quizState.bookmarked.forEach((item) => {
-    bookmarkedQuestions.push(createQuestionCard(quizState, item));
+  currentQuizState.bookmarked.forEach((item) => {
+    bookmarkedQuestions.push(createQuestionCard(currentQuizState, item));
   });
   // console.log(bookmarkedQuestions);
   if (bookmarkedQuestions.length > 0) {

@@ -4,7 +4,8 @@
   --gradientTop: #9c1614;
   --gradientBottom: #a32222;
   --border-radius: 5px;
-  --font-family: 'Marvel', sans-serif;
+  --font-family-marvel: 'Marvel', sans-serif;
+  --font-family-fortnite: 'Luckiest Guy', cursive;
 }
 * {
   box-sizing: border-box;
@@ -48,7 +49,7 @@ header {
   );
 }
 header .title {
-  font-family: var(--font-family);
+  font-family: var(--font-family-marvel);
   font-weight: 900;
   font-style: normal;
   font-size: 2.5rem;
@@ -57,7 +58,7 @@ header .title {
   letter-spacing: -5px;
 }
 header p {
-  font-family: var(--font-family);
+  font-family: var(--font-family-marvel);
   font-weight: 900;
   font-style: normal;
   font-size: 2.3rem;
@@ -71,7 +72,7 @@ header p:before {
 }
 header .current-view-indicator {
   /* justify-self: flex-end; */
-  font-family: var(--font-family);
+  font-family: var(--font-family-marvel);
   font-weight: 900;
   font-style: normal;
   font-size: 2.3rem;
@@ -81,7 +82,7 @@ header .current-view-indicator {
   transition: color 200ms ease-in-out, letter-spacing 200ms ease-in-out;
 }
 .current-view--changed {
-  font-family: var(--font-family);
+  font-family: var(--font-family-marvel);
   font-weight: 900;
   font-style: normal;
   font-size: 2.3rem;
@@ -123,7 +124,7 @@ header .current-view-indicator {
   position: absolute;
   top: 5rem;
   /* right: 5rem; */
-  font-family: var(--font-family);
+  font-family: var(--font-family-marvel);
   font-size: 1.5rem;
   font-weight: 800;
   font-style: normal;
@@ -185,7 +186,7 @@ header .current-view-indicator {
   /* box-shadow: 1px 1px #192a3bbc; */
 }
 .question-card--text {
-  font-family: var(--font-family);
+  font-family: var(--font-family-marvel);
   font-size: 1.2rem;
   font-weight: 800;
   font-style: normal;
@@ -195,7 +196,7 @@ header .current-view-indicator {
   position: absolute;
   bottom: 5rem;
   right: 1rem;
-  font-family: var(--font-family);
+  font-family: var(--font-family-marvel);
   font-size: 1.5rem;
   font-weight: 800;
   font-style: normal;
@@ -216,7 +217,7 @@ header .current-view-indicator {
   border-radius: var(--border-radius);
   /* box-shadow: 1px 1px #192a3bbc; */
   padding: 0.2rem 0.6rem;
-  font-family: var(--font-family);
+  font-family: var(--font-family-marvel);
   font-size: 1rem;
   font-weight: 800;
   font-style: normal;
@@ -255,21 +256,21 @@ header .current-view-indicator {
   text-transform: uppercase;
 }
 .wow-a-winner {
-  font-family: var(--font-family);
+  font-family: var(--font-family-marvel);
   font-size: 1rem;
   font-weight: 800;
   font-style: normal;
   color: white;
 }
 .a-frequent-marvel-watcher {
-  font-family: var(--font-family);
+  font-family: var(--font-family-marvel);
   font-size: 1rem;
   font-weight: 800;
   font-style: normal;
   color: white;
 }
 .keep-on-watchin {
-  font-family: var(--font-family);
+  font-family: var(--font-family-marvel);
   font-size: 1rem;
   font-weight: 800;
   font-style: normal;
@@ -322,7 +323,7 @@ header .current-view-indicator {
 .name,
 .about-text {
   position: relative;
-  font-family: var(--font-family);
+  font-family: var(--font-family-marvel);
   font-size: 1.2rem;
   font-weight: 800;
   font-style: normal;
@@ -359,7 +360,7 @@ header .current-view-indicator {
   /* text-decoration: none; */
 }
 .aHref {
-  font-family: var(--font-family);
+  font-family: var(--font-family-marvel);
   font-size: 1rem;
   font-weight: 800;
   font-style: normal;
@@ -368,7 +369,7 @@ header .current-view-indicator {
   text-decoration: none;
 }
 .aHref:hover {
-  font-family: var(--font-family);
+  font-family: var(--font-family-marvel);
   font-size: 1rem;
   font-weight: 800;
   font-style: normal;

@@ -1,5 +1,5 @@
 export const availableQuizzies = [
-  { quizName: 'MCU' },
-  { quizName: 'Fortnite' },
-  { quizName: 'professionalSoccer' },
+  { quizName: 'Marvel', lsItemName: 'MCU' },
+  { quizName: 'Fortnite', lsItemName: 'Fortnite' },
+  { quizName: 'Soccer', lsItemName: 'professionalSoccer' },
 ];

@@ -155,7 +155,7 @@ export const colorPalette = [
   '#319236',
   '#4c51f7',
   '#9d4dbb',
-  '#f3af1',
+  '#f3af19',
 ];
 
 let lsObjectName = 'quizDataFortnite';

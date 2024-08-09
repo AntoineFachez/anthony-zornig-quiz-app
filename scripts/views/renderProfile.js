@@ -73,7 +73,7 @@ export function renderProfile() {
   profile.appendChild(bodyWrapper);
   profile.appendChild(footWrapper);
   profile.appendChild(linksWrapper);
-  profile.appendChild(darkModeToggle);
+  // profile.appendChild(darkModeToggle);
 
   // if (links.length > 0) {
   //   links.forEach((link) => {

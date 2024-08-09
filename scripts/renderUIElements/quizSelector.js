@@ -1,12 +1,11 @@
 import { availableQuizzies } from '../../data/availableQuizzies.js';
-import { toggleDarkMode } from '../states/darkModeToggle.js';
+import { setDarkMode } from '../states/darkModeToggle.js';
 import { getBookMarkedItems } from '../views/renderBookMarkedItems.js';
 import {
   renderQuiz,
   setCurrentQuiz,
   setCurrentQuizState,
 } from '../views/renderQuiz.js';
-const footer = document.getElementById('footer');
 
 export function createQuizSelect() {
   const selectElement = document.createElement('select');
@@ -14,9 +13,10 @@ export function createQuizSelect() {
   selectElement.id = 'quizzies';
 
   for (const quiz of availableQuizzies) {
+    const quizLSItemName = quiz.lsItemName;
     const quizName = quiz.quizName;
     const optionElement = document.createElement('option');
-    optionElement.value = quizName.toLowerCase(); // Use lowercase for consistency
+    optionElement.value = quizLSItemName.toLowerCase(); // Use lowercase for consistency
     optionElement.text = quizName;
     selectElement.add(optionElement);
     selectElement.addEventListener('change', (event) => {
@@ -25,9 +25,8 @@ export function createQuizSelect() {
       setCurrentQuiz(selectedQuiz);
       renderQuiz();
       getBookMarkedItems();
-      toggleDarkMode();
+      setDarkMode(getCurrentAppState());
     });
   }
-
-  footer.appendChild(selectElement);
+  return selectElement;
 }

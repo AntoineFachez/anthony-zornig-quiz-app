@@ -215,12 +215,22 @@ export const data = [
   },
 ];
 
+export const colorPaletteCaptainAmerica = [
+  '#070914',
+  '#171b31',
+  '#aeb7c2',
+  '#fefefe',
+  '#9b3430',
+  '#d41212',
+  '#3b5fa4',
+  '#337495',
+];
 export const colorPaletteCaptainMarvel = [
   '#047cb6',
-  '#fbc623',
-  '#d41212',
   '#50c6ff',
-  '#feff7',
+  '#fbc623',
+  '#feff79',
+  '#d41212',
 ];
 export const colorPaletteDoctorStrange = [
   '#00438d',
@@ -228,13 +238,6 @@ export const colorPaletteDoctorStrange = [
   '#ffa700',
   '#000000',
   '#bfbdbd',
-];
-export const colorPaletteCaptainAmerica = [
-  '#9b3430',
-  '#fefefe',
-  '#aeb7c2',
-  '#3b5fa4',
-  '#171b31',
 ];
 export const colorPaletteGroot = [
   '#8b332c',
@@ -263,5 +266,5 @@ export const quizStateMCU = {
   countCorrectAnswers: 0,
   progressPercent: 0,
   correctAnswersText: '',
-  colorPalette: colorPaletteCaptainMarvel,
+  colorPalette: colorPaletteCaptainAmerica,
 };

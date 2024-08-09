@@ -1,21 +1,23 @@
 import { availableAppStates } from '../data/availableAppStates.js';
-import { initialAppState, setInitialAppState } from './states/appState.js';
-
-//FIX: toggle quizzle MCU || Fortnite || professionalSoccer
-import { quizStateMCU } from '../../data/dataMCU.js';
-
+import {
+  currentGameState,
+  initialAppState,
+  setInitialAppState,
+} from './states/appState.js';
 import { setCurrentViewIndicator } from './renderUIElements/currentViewIndicator.js';
 import { initFooterButtons } from './renderUIElements/footerButtons.js';
 import { getBookMarkedItems } from './views/renderBookMarkedItems.js';
-import { setNewQuizState } from './states/gameState.js';
-// import { renderColorPalette } from './views/renderColorPalette.js';
+import { createQuizSelect } from './renderUIElements/quizSelector.js';
+// import { getCurrentQuizState } from './views/renderQuiz.js';
+import { toggleDarkMode } from './states/darkModeToggle.js';
 
 export function initApp() {
+  setInitialAppState(initialAppState);
+
   setCurrentViewIndicator(initialAppState); //* where is the user? in the header
   initFooterButtons(availableAppStates, initialAppState);
+  createQuizSelect();
 
-  quizStateMCU.bookmarked = getBookMarkedItems(); //* counter in the footerButton
-
-  setInitialAppState(initialAppState);
+  getBookMarkedItems(); //* counter in the footerButton
 }
 initApp();

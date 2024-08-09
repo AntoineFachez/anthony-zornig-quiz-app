@@ -1,19 +1,18 @@
+import { getCurrentQuizState } from '../views/renderQuiz.js';
+import { toggleDarkMode } from './darkModeToggle.js';
 import { setNewViewState } from './viewState.js';
-import { setNewQuizState } from './gameState.js';
-
-export let initialAppState = { currentView: 'quiz' };
+export let initialAppState = { currentView: 'profile' };
 
 let currentAppState = {};
-let currentGameState = {};
+export let currentGameState = {};
 const mainSection = document.querySelector('.main-section');
 
 export function setInitialAppState(initialAppState) {
   mainSection.innerHTML = '';
   currentAppState = initialAppState;
-  // currentGameState = initialGameState;
 
   setNewViewState(currentAppState);
-  setNewQuizState(currentGameState);
+  toggleDarkMode();
 }
 export function getCurrentAppState(params) {
   console.log(currentAppState);

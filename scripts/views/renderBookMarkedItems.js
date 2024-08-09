@@ -1,24 +1,24 @@
 // import { quizStateMCU } from '../../data/dataMCU.js';
-import { currentQuizState } from './renderQuiz.js';
+import { getCurrentQuizState, currentQuizState } from './renderQuiz.js';
 import { createQuestionCard } from '../questionCard/createQuestionCard.js';
+import { currentGameState } from '../states/appState.js';
 
-let currentStateData;
+let state;
 const mainSection = document.querySelector('.main-section');
 const bookmarkedArray = [];
 
 export function getBookMarkedItems() {
+  state = getCurrentQuizState();
+
   const bookMarkButton = document.querySelector('.--bookmarked');
-  if (!localStorage.getItem('quizDataMCU')) {
-    currentStateData = data;
-  } else {
-    currentStateData = JSON.parse(localStorage.getItem('quizDataMCU'));
-  }
-  const bmArray = currentStateData.filter(
+
+  const bmArray = state.currentStateData.filter(
     (item) => item.bookMarkState === true
   );
   bookMarkButton.textContent =
     bmArray.length > 0 ? `Bookmark (${bmArray.length})` : 'Bookmark';
   bookmarkedArray.push(bmArray);
+  state.bookmarked = bmArray;
   return bmArray;
 }
 
@@ -29,7 +29,6 @@ export function renderBookMarked() {
   currentQuizState.bookmarked.forEach((item) => {
     bookmarkedQuestions.push(createQuestionCard(currentQuizState, item));
   });
-  // console.log(bookmarkedQuestions);
   if (bookmarkedQuestions.length > 0) {
     bookmarkedQuestions.forEach((questionCard) => {
       mainSection.appendChild(questionCard);

@@ -8,7 +8,7 @@ export const data = [
     imgUrl:
       'https://images.mein-mmo.de/magazin/medien/2018/07/Fortnite-Tommy-Gun-01.jpg',
     imgAlt: 'Drum Gun Fortnite',
-    bookMarkState: false,
+    bookMarkState: true,
     possibleAnswers: [
       { possibleAnswer: 'Pumpgun' },
       { possibleAnswer: 'Trommelgewehr' },
@@ -158,12 +158,16 @@ export const colorPalette = [
   '#f3af1',
 ];
 
+let lsObjectName = 'quizDataFortnite';
 export const quizStateFortnite = {
+  quizName: 'Fortnite',
   allQuestionsAnswered: false,
-  currentStateData: manageLSData(data, 'quizDataFortnite'),
+  lsObjectName: lsObjectName,
+  currentStateData: manageLSData(data, lsObjectName),
   bookmarked: [],
   currentQuestionIndex: 0,
   countCorrectAnswers: 0,
   progressPercent: 0,
   correctAnswersText: '',
+  colorPalette: colorPaletteSeason6,
 };

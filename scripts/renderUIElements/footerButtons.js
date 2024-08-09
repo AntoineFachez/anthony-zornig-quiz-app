@@ -5,15 +5,13 @@ const footer = document.getElementById('footer');
 export function initFooterButtons(buttonsData, appState) {
   buttonsData.forEach((buttonData) => {
     const bt = renderButton(appState, buttonData);
-    // Call the function immediately after rendering
+
     // if (buttonData.callFn) {
     //   buttonData.callFn(); // Execute the function
     // }
     footer.appendChild(bt);
   });
 
-  /*setButtonClass is seperated from forEach in order to
-   loop over the buttons from other files */
   setButtonClass(appState);
 }
 

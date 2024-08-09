@@ -216,9 +216,9 @@ export const data = [
 ];
 
 export const colorPaletteCaptainMarvel = [
-  '#d41212',
   '#047cb6',
   '#fbc623',
+  '#d41212',
   '#50c6ff',
   '#feff7',
 ];
@@ -245,19 +245,23 @@ export const colorPaletteGroot = [
   '#787f42',
 ];
 export const colorPaletteHulk = [
+  '#455d3',
   '#253324',
+  '#5a4862',
   '#9bc063',
   '#70964b',
-  '#5a4862',
-  '#455d3',
 ];
 
+let lsObjectName = 'quizDataMCU';
 export const quizStateMCU = {
+  quizName: 'Marvel',
   allQuestionsAnswered: false,
-  currentStateData: manageLSData(data, 'quizDataMCU'),
+  lsObjectName: lsObjectName,
+  currentStateData: manageLSData(data, lsObjectName),
   bookmarked: [],
   currentQuestionIndex: 0,
   countCorrectAnswers: 0,
   progressPercent: 0,
   correctAnswersText: '',
+  colorPalette: colorPaletteCaptainMarvel,
 };

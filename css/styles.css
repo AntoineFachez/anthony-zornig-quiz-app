@@ -26,11 +26,12 @@ body {
   align-items: center;
   padding: var(--paddingBodyTop) 0 5rem 0;
 
-  background: linear-gradient(to bottom, #022e2e, #344b25);
+  /* background: linear-gradient(to bottom, #022e2e, #344b25); */
   overflow: hidden;
 }
 body.dark-mode {
-  background-color: #333;
+  background: linear-gradient(to bottom, #606969, #344b25);
+  /* background-color: #333; */
   color: #fff;
 }
 header {
@@ -143,7 +144,7 @@ header .current-view-indicator {
   justify-content: center;
   padding: 1rem;
   border-radius: 5px;
-  background: linear-gradient(to top, #5593d4, #4679af);
+  /* background: linear-gradient(to top, #5593d4, #4679af); */
   gap: 0.5rem;
   box-shadow: 1px 1px 1px 1px #192a3bbc;
 }

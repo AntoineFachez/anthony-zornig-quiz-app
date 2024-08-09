@@ -7,23 +7,36 @@ import { displayResult } from './displayResult.js';
 
 const mainSection = document.querySelector('.main-section');
 
-export let initialGameState = { currentQuiz: 'MCU' };
+export let initialGameState = { currentQuiz: 'mcu' };
 let currentGameState = initialGameState;
 export let currentQuizState;
 
+export function setCurrentQuiz(newQuiz) {
+  currentGameState.currentQuiz = newQuiz;
+  setCurrentQuizState();
+}
+
 export function setCurrentQuizState() {
-  if (currentGameState.currentQuiz === 'MCU') {
+  if (currentGameState.currentQuiz.toLowerCase() === 'mcu') {
     currentQuizState = quizStateMCU;
-  } else if (currentGameState.currentQuiz === 'Fornite') {
+  } else if (currentGameState.currentQuiz.toLowerCase() === 'fortnite') {
     currentQuizState = quizStateFortnite;
-  } else if (currentGameState.currentQuiz === 'professionalSoccer') {
+  } else if (
+    currentGameState.currentQuiz.toLowerCase() === 'professionalsoccer'
+  ) {
     currentQuizState = quizStateProfessionalSoccer;
   }
+  return currentQuizState;
+}
+export function getCurrentQuizState() {
+  setCurrentQuizState();
+  return currentQuizState;
 }
 
 export function renderQuiz() {
   mainSection.innerHTML = '';
-  setCurrentQuizState();
+  const currentQuiz = getCurrentQuizState();
+
   const i = currentQuizState.currentQuestionIndex;
   const item = currentQuizState.currentStateData[i];
   if (i < currentQuizState.currentStateData.length) {

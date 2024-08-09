@@ -2,9 +2,10 @@ import { quizStateProfessionalSoccer } from '../../data/dataProfessionalSoccer.j
 import { setCurrentViewIndicator } from '../renderUIElements/currentViewIndicator.js';
 import { setButtonClass } from '../renderUIElements/footerButtons.js';
 
-import { renderQuiz } from '../views/renderQuiz.js';
+import { getCurrentQuizState, renderQuiz } from '../views/renderQuiz.js';
 import { renderBookMarked } from '../views/renderBookMarkedItems.js';
 import { renderProfile } from '../views/renderProfile.js';
+import { toggleDarkMode } from './darkModeToggle.js';
 
 export function setNewViewState(currentAppState) {
   setCurrentViewIndicator(currentAppState);
@@ -18,6 +19,6 @@ export function setNewViewState(currentAppState) {
     renderProfile();
   } else {
   }
-
+  toggleDarkMode();
   return currentAppState;
 }

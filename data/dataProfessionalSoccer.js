@@ -22,7 +22,7 @@ export const data = [
     imgUrl:
       'https://static.bnn.de/sport/urn-newsml-dpacom-20090101-230301-99-784642-d7t6kp/alternates/LANDSCAPE_16x9_688/urn-newsml-dpacom-20090101-230301-99-784642',
     imgAlt: 'Just Fontaine World Cup',
-    bookMarkState: false,
+    bookMarkState: true,
     possibleAnswers: [
       { possibleAnswer: 'Pelé' },
       { possibleAnswer: 'Just Fontaine' },
@@ -48,7 +48,7 @@ export const data = [
     imgUrl:
       'https://upload.wikimedia.org/wikipedia/de/thumb/3/3f/Real_Madrid_Logo.svg/800px-Real_Madrid_Logo.svg.png',
     imgAlt: 'Real Madrid Champions League',
-    bookMarkState: false,
+    bookMarkState: true,
     possibleAnswers: [
       { possibleAnswer: 'AC Mailand' },
       { possibleAnswer: 'Real Madrid' },
@@ -126,27 +126,26 @@ export const data = [
   },
 ];
 
-export const colorPaletteSeason6 = [
-  '#2a095f',
-  '#3d02bd',
-  '#e25bff',
-  '#ddb1ff',
-  '#fbeff',
+export const colorPaletteFifa = [
+  '#a611ed',
+  '#dca1f8',
+  '#56097b',
+  '#9c6c94',
+  '#b0a0a4',
+  '#34243c',
 ];
-export const colorPalette = [
-  '#ffffff',
-  '#319236',
-  '#4c51f7',
-  '#9d4dbb',
-  '#f3af1',
-];
+export const colorPalette = ['#1077c3', '#49bce3', '#fec310', '#56042c'];
 
+let lsObjectName = 'quizdataProfessionalSoccer';
 export const quizStateProfessionalSoccer = {
+  quizName: 'Soccer',
   allQuestionsAnswered: false,
-  currentStateData: manageLSData(data, 'quizdataProfessionalSoccer'),
+  lsObjectName: lsObjectName,
+  currentStateData: manageLSData(data, lsObjectName),
   bookmarked: [],
   currentQuestionIndex: 0,
   countCorrectAnswers: 0,
   progressPercent: 0,
   correctAnswersText: '',
+  colorPalette: colorPaletteFifa,
 };

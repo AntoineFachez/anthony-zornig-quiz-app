@@ -1,3 +1,4 @@
+import { toggleDarkMode } from '../states/darkModeToggle.js';
 import { createBookMark } from './createBookMark.js';
 import { createButtonArrayCard } from './createButtons.js';
 
@@ -21,6 +22,7 @@ export function createQuestionCard(quizState, item) {
 
   mainSection.appendChild(questionCard);
 
+  toggleDarkMode();
   return questionCard;
 }
 

@@ -39,7 +39,7 @@ export function createBookMark(quizState, questionCard, item) {
 
       // Save the entire data array to LS
       localStorage.setItem(
-        'quizData',
+        quizState.lsObjectName,
         JSON.stringify(quizState.currentStateData)
       );
     } else {

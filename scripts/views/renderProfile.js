@@ -1,5 +1,6 @@
 // import { profileData} from '../../data/dataMCU.js';
 import { profileData } from '../../data/profileData.js';
+import { createToggleButton } from '../renderUIElements/darkModeToggler.js';
 const mainSection = document.querySelector('.main-section');
 
 export function renderProfile() {
@@ -61,7 +62,7 @@ export function renderProfile() {
     links.push(aHrefButton);
   });
 
-  // const toggleDarkMode = toggleButton();
+  const darkModeToggle = createToggleButton();
 
   headWrapper.appendChild(profilePicture);
   headWrapper.appendChild(name);
@@ -72,6 +73,7 @@ export function renderProfile() {
   profile.appendChild(bodyWrapper);
   profile.appendChild(footWrapper);
   profile.appendChild(linksWrapper);
+  profile.appendChild(darkModeToggle);
 
   // if (links.length > 0) {
   //   links.forEach((link) => {

@@ -20,7 +20,7 @@ export function setNewViewState(currentAppState) {
     renderProfile();
   } else {
   }
+  setDarkMode(currentAppState);
 
-  setDarkMode(getCurrentAppState());
   return currentAppState;
 }

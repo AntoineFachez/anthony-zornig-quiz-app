@@ -6,27 +6,35 @@ const toggleButton = document.createElement('button');
 
 export function createToggleButton() {
   const currentAppState = getCurrentAppState();
-  setToggleDarkModeIcon();
+  setToggleDarkModeIcon(currentAppState);
 
   toggleButton.id = 'toggleButtonDarkMode';
   toggleButton.classList.add('btn', 'btn__icon');
 
-  toggleButton.addEventListener(
-    'click',
-    () => setToggleDarkModeIcon()
-    // () => setDarkMode(currentAppState)
-  );
+  toggleButton.addEventListener('click', () => setToggleState());
 
-  // toggleButton.textContent = 'Toggle Dark Mode';
-  // toggleButton.style.backgroundImage = `url(${
-  //   darkMode ? darkModeIcon : lightModeIcon
-  // })`;
-  // toggleButton.style.backgroundSize = `1rem`;
-  // toggleButton.style.backgroundRepeat = `no-repeat`;
   return toggleButton;
 }
-export const setToggleDarkModeIcon = () => {
+
+export const setToggleState = () => {
   const currentAppState = getCurrentAppState();
+
+  const className = 'dark-mode';
+
+  const body = document.querySelector('body');
+  if (currentAppState.darkMode) {
+    currentAppState.darkMode = false;
+    body.classList.remove(className);
+    setToggleDarkModeIcon(currentAppState);
+    setDarkMode(currentAppState);
+  } else {
+    currentAppState.darkMode = true;
+    body.classList.add(className);
+    setToggleDarkModeIcon(currentAppState);
+    setDarkMode(currentAppState);
+  }
+};
+export const setToggleDarkModeIcon = (currentAppState) => {
   console.log(currentAppState);
 
   const darkMode = currentAppState.darkMode;
@@ -39,11 +47,4 @@ export const setToggleDarkModeIcon = () => {
   })`;
   toggleButton.style.backgroundSize = `1rem`;
   toggleButton.style.backgroundRepeat = `no-repeat`;
-  if (currentAppState.darkMode) {
-    currentAppState.darkMode = false;
-    // setDarkMode(currentAppState);
-  } else {
-    currentAppState.darkMode = true;
-    // setDarkMode(currentAppState);
-  }
 };

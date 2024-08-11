@@ -1,23 +1,9 @@
-// import { setToggleDarkModeIcon } from '../renderUIElements/darkModeToggler.js';
 import { getCurrentQuizState } from '../views/renderQuiz.js';
-import { getCurrentAppState } from './appState.js';
-
-// export function setDarkMode(currentAppState) {
-//   const className = 'dark-mode';
-
-//   const body = document.querySelector('body');
-//   if (body.classList.contains(className)) {
-//     body.classList.remove(className);
-//   } else {
-//     body.classList.add(className);
-//   }
-// }
 
 export function setDarkMode(mode) {
   console.log(mode);
 
   const currentQuiz = getCurrentQuizState();
-  // setToggleDarkModeIcon();
   let toggleTopBottom = 'bottom';
   const className = 'dark-mode';
 
@@ -27,15 +13,9 @@ export function setDarkMode(mode) {
   const card = document.querySelector('section');
 
   if (mode.darkMode) {
-    // console.log('clicked', body.classList);
     toggleTopBottom = 'bottom';
-    body.classList.remove(className);
-    // mode.darkMode = false;
   } else {
-    // console.log('clicked', body.classList);
     toggleTopBottom = 'top';
-    body.classList.add(className);
-    // mode.darkMode = true;
   }
 
   const primary = `linear-gradient(to ${toggleTopBottom},${currentQuiz.colorPalette[0]},${currentQuiz.colorPalette[1]})`;

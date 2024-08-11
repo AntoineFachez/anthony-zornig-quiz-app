@@ -264,6 +264,7 @@ header .current-view-indicator {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: solid 2px #fff;
   cursor: 'pointer';
   background-color: transparent;
 }

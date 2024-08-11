@@ -1,6 +1,6 @@
 import { setNewViewState } from './viewState.js';
 
-export let initialAppState = { currentView: 'profile', darkMode: true };
+export let initialAppState = { currentView: 'quiz', darkMode: true };
 export let currentAppState = {};
 export let currentGameState = {};
 

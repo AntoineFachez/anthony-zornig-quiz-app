@@ -224,6 +224,43 @@ header .current-view-indicator {
   font-style: normal;
   color: white;
 }
+.new-question-card {
+  z-index: 1;
+  /* position: sticky; */
+  /* top: 2rem; */
+  position: relative;
+  width: 100%;
+  max-width: 30ch;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 5px;
+  /* background: linear-gradient(to top, #5593d4, #4679af); */
+  gap: 0.5rem;
+  box-shadow: 1px 1px 1px 1px #192a3bbc;
+}
+.label-new-question {
+  font-family: var(--font-family-marvel);
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-style: normal;
+  color: white;
+  text-transform: uppercase;
+}
+.new-question__possible-answers-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.new-question__possible-answers {
+  font-family: var(--font-family-marvel);
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-style: normal;
+  color: white;
+  text-transform: uppercase;
+}
 .main-section--result-text {
   position: absolute;
   bottom: 5rem;

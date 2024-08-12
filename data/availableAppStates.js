@@ -22,12 +22,18 @@ export const availableAppStates = [
     // },
   },
   {
+    content: 'NewCard',
+    view: 'newCard',
+    //currentView: false,
+    callFn: null,
+  },
+  {
     content: 'Profile',
     view: 'profile',
     //currentView: false,
     callFn: null,
   },
-  // {
+  // {∑
   //   content: 'Somethin Else',
   //   view: 'somethin',
   //   //currentView: false

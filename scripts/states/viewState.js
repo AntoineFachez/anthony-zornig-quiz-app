@@ -7,8 +7,11 @@ import { renderBookMarked } from '../views/renderBookMarkedItems.js';
 import { renderProfile } from '../views/renderProfile.js';
 import { setDarkMode } from './darkModeToggle.js';
 import { getCurrentAppState } from './appState.js';
+import { renderNewCard } from '../views/renderNewCard.js';
 
 export function setNewViewState(currentAppState) {
+  const currentQuizState = getCurrentQuizState();
+
   setCurrentViewIndicator(currentAppState);
   setButtonClass(currentAppState);
 
@@ -16,6 +19,8 @@ export function setNewViewState(currentAppState) {
     renderQuiz();
   } else if (currentAppState.currentView === 'bookmarked') {
     renderBookMarked();
+  } else if (currentAppState.currentView === 'newCard') {
+    renderNewCard(currentQuizState);
   } else if (currentAppState.currentView === 'profile') {
     renderProfile();
   } else {

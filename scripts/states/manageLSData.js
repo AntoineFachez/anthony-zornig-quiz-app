@@ -9,3 +9,9 @@ export function manageLSData(quizDataItem, quizDataName) {
   }
   return currentStateData;
 }
+export function storeNewDataToLS(quizDataItem, quizDataName) {
+  const currentQuizData = JSON.parse(localStorage.getItem(quizDataName));
+  console.log('clicked');
+
+  return 'successfully stored';
+}

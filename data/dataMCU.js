@@ -213,6 +213,106 @@ export const data = [
       { possibleAnswer: 'Planetary Ent' },
     ],
   },
+  {
+    question:
+      'Which legendary comic book writer and editor co-created many iconic Marvel characters, including Spider-Man, Iron Man, and the X-Men?',
+    answer: 'Stan Lee',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/d/d0/Stan_Lee_by_Gage_Skidmore_3.jpg',
+    imgAlt: 'Stan_Lee_by_Gage_Skidmore_3',
+    bookMarkState: false,
+    possibleAnswers: [
+      {
+        possibleAnswer: 'Jack Kirby',
+      },
+      {
+        possibleAnswer: 'Stan Lee',
+      },
+      {
+        possibleAnswer: 'Steve Ditko',
+      },
+    ],
+  },
+  {
+    question:
+      'In which film did the character Daredevil first appear in the Marvel Cinematic Universe?',
+    answer: 'Daredevil (2003)',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/1/1e/Daredevilposter.jpg',
+    imgAlt: 'Daredevilposter',
+    bookMarkState: false,
+    possibleAnswers: [
+      {
+        possibleAnswer: 'The Punisher (2004)',
+      },
+      {
+        possibleAnswer: 'Daredevil (2003)',
+      },
+      {
+        possibleAnswer: 'Elektra (2005)',
+      },
+    ],
+  },
+  {
+    question:
+      "What is the name of the Asgardian trickster god and Thor's adopted brother?",
+    answer: 'Loki',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/8/86/Loki_in_Thor_The_Dark_World.png',
+    imgAlt: 'Loki_in_Thor_The_Dark_World',
+    bookMarkState: false,
+    possibleAnswers: [
+      {
+        possibleAnswer: 'Heimdall',
+      },
+      {
+        possibleAnswer: 'Loki',
+      },
+      {
+        possibleAnswer: 'Odin',
+      },
+    ],
+  },
+  {
+    question:
+      'Which company acquired Marvel Entertainment in 2009, expanding its vast media empire?',
+    answer: 'The Walt Disney Company',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/3/37/The_Walt_Disney_Company_logo.svg',
+    imgAlt: 'The_Walt_Disney_Company_logo',
+    bookMarkState: false,
+    possibleAnswers: [
+      {
+        possibleAnswer: 'Sony Pictures',
+      },
+      {
+        possibleAnswer: 'The Walt Disney Company',
+      },
+      {
+        possibleAnswer: 'Warner Bros.',
+      },
+    ],
+  },
+  {
+    question:
+      'Which Marvel superhero team, led by Professor X, consists of mutants with extraordinary abilities?',
+    answer: 'X-Men',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/8/84/X-Men_Origins_-_Wolverine.jpg',
+    imgAlt: 'X-Men_Origins_-_Wolverine',
+    bookMarkState: false,
+    possibleAnswers: [
+      {
+        possibleAnswer: 'Fantastic Four',
+      },
+      {
+        possibleAnswer: 'X-Men',
+      },
+      {
+        possibleAnswer: 'Guardians of the Galaxy',
+      },
+    ],
+  },
 ];
 
 export const colorPaletteCaptainAmerica = [
@@ -267,4 +367,5 @@ export const quizStateMCU = {
   progressPercent: 0,
   correctAnswersText: '',
   colorPalette: colorPaletteCaptainAmerica,
+  geminiGenerateInstructionPrompt: `here is an array of json objects of a trivia quiz. Please have a look at it and generate 5 more questions in context of the ${'Marvel cinematic Universe'}. You could randomly choose topics such as questions about the films or background information such as Disney, creative Teams or the original authors. Have fun with playing around. If you choose to please suggest only image links from wikipedia. Return only json objects exactly with the data structure as I provided. Thnx!`,
 };

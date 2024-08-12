@@ -1,7 +1,7 @@
 import { getCurrentQuizState } from '../views/renderQuiz.js';
 
 export function setDarkMode(mode) {
-  console.log(mode);
+  // console.log(mode);
 
   const currentQuiz = getCurrentQuizState();
   let toggleTopBottom = 'bottom';
@@ -25,19 +25,25 @@ export function setDarkMode(mode) {
     toggleTopBottom === 'top' ? 'bottom' : 'top'
   },${currentQuiz.colorPalette[6]},${currentQuiz.colorPalette[7]})`;
 
-  if (body.classList.contains(className)) {
-    header.style.background = primary;
+  try {
+    if (body.classList.contains(className)) {
+      header.style.background = primary;
 
-    body.style.background = primary;
-    card.style.background = secondary;
+      body.style.background = primary;
+      card.style.background = secondary;
 
-    footer.style.background = primary;
-  } else {
+      footer.style.background = primary;
+    } else {
+      header.style.background = accent1;
+
+      body.style.background = secondary;
+      card.style.background = primary;
+
+      footer.style.background = accent2;
+    }
+  } catch (error) {
     header.style.background = accent1;
-
     body.style.background = secondary;
-    card.style.background = primary;
-
     footer.style.background = accent2;
   }
 }

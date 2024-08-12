@@ -148,4 +148,5 @@ export const quizStateProfessionalSoccer = {
   progressPercent: 0,
   correctAnswersText: '',
   colorPalette: colorPaletteFifa,
+  geminiGenerateInstructionPrompt: `here is an array of json objects of a trivia quiz. Please have a look at it and generate 5 more questions in context of ${'professional Soccer'}. You could randomly choose topics such as questions about the FIFA, World or Continetal Champion Chips or background information such as Stars, big Promotion and Supporter Companies or the rules of Soccer. Have fun with playing around. If you choose to please suggest only image links from wikipedia. Return only json objects exactly with the data structure as I provided. Please keep the keys in english as is and return the values in the provided language German. Thnx!`,
 };

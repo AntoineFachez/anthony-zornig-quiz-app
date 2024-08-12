@@ -5,7 +5,7 @@ import { createButtonArrayCard } from './createButtons.js';
 
 export function createQuestionCard(quizState, item) {
   const mainSection = document.querySelector('main');
-  mainSection.innerHTML = '';
+  // mainSection.innerHTML = '';
   const questionCard = document.createElement('section');
   questionCard.classList.add('question-card');
 
@@ -23,7 +23,7 @@ export function createQuestionCard(quizState, item) {
 
   mainSection.appendChild(questionCard);
 
-  // setDarkMode(getCurrentAppState());
+  setDarkMode(getCurrentAppState());
   return questionCard;
 }
 

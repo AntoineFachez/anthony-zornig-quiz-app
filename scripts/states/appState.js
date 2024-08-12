@@ -1,6 +1,10 @@
 import { setNewViewState } from './viewState.js';
 
-export let initialAppState = { currentView: 'newCard', darkMode: true };
+export let initialAppState = {
+  currentView: 'newCard',
+  darkMode: true,
+  selectedNewCardState: 'suggest',
+};
 export let currentAppState = {};
 export let currentGameState = {};
 

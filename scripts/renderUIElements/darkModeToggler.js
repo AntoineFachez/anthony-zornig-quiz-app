@@ -35,7 +35,7 @@ export const setToggleState = () => {
   }
 };
 export const setToggleDarkModeIcon = (currentAppState) => {
-  console.log(currentAppState);
+  // console.log(currentAppState);
 
   const darkMode = currentAppState.darkMode;
   const darkModeIcon = '../../assets/icons/darkMode.png';

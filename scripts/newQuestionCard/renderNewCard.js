@@ -1,9 +1,10 @@
 import { storeNewDataToLS } from '../states/manageLSData.js';
+import { callSiteByURL, copyJSONToClipboard } from '../utils/helpers.js';
 
 const mainSection = document.querySelector('.main-section');
 
-export function renderNewCard(quizData) {
-  console.log(quizData.lsObjectName);
+export function renderNewCard(createSelector, appState, quizData) {
+  console.log(quizData);
 
   const quizDataName = quizData.lsObjectName;
   mainSection.innerHTML = '';
@@ -19,13 +20,17 @@ export function renderNewCard(quizData) {
 
   footWrapper.classList.add('foot-wrapper');
 
-  newCard.append(cardPicture);
+  // footWrapper.append(handleUseGeminiForSuggestions());
   footWrapper.append(buttonSubmit);
+
+  newCard.append(cardPicture);
   newCard.append(newQuestion);
   newCard.append(possibleAnswersWrapper);
   newCard.append(footWrapper);
 
-  mainSection.append(newCard);
+  const selector = createSelector(appState, quizData);
+
+  mainSection.append(newCard, selector);
 }
 export function createNewQuestion() {
   const newQuestionWrapper = document.createElement('div');
@@ -82,13 +87,11 @@ export function createImageLink() {
   inputFieldImageLink.setAttribute('id', `imageLinkInput`);
   labelImageLink.setAttribute('for', 'imageLinkInput');
   labelImageLink.textContent = 'Drop Image Link';
-  // cardPicture.classList.add('newCard-image');
-  const imageLink = inputFieldImageLink.addEventListener('drop', (e) =>
-    setImageLink(e)
-  );
-  // cardPicture.src = imageLink;
-  cardPicture.src = imageLink;
-  cardPicture.alt = 'imageLink';
+  cardPicture.classList.add('newCard-image');
+  inputFieldImageLink.addEventListener('blur', (e) => {
+    cardPicture.alt = 'imageLink';
+    cardPicture.src = setImageLink(e);
+  });
 
   cardImageWrapper.append(labelImageLink);
   cardImageWrapper.append(cardPicture);
@@ -113,4 +116,48 @@ export function setImageLink(e) {
   console.log(e.target.value);
 
   return e.target.value;
+}
+// export function handleUseGeminiForSuggestions(
+//   createSelector,
+//   currentAppState,
+//   currentQuizState
+// ) {
+//   const mainSection = document.querySelector('.main-section');
+//   mainSection.innerHTML = '';
+//   const geminiWrapper = document.createElement('div');
+//   geminiWrapper.classList.add('gemini-wrapper');
+
+//   const selector = createSelector(currentAppState, currentQuizState);
+//   console.log(selector);
+
+//   const goToGeminiButton = document.createElement('button');
+//   goToGeminiButton.classList.add('btn');
+//   goToGeminiButton.textContent = 'https://gemini.google.com';
+
+//   const referenceData =
+//     currentQuizState.geminiGenerateInstructionPrompt +
+//     '… ' +
+//     JSON.stringify(currentQuizState.currentStateData);
+
+//   goToGeminiButton.addEventListener('click', () =>
+//     handleGetSuggestionsAtGeminiSite(referenceData)
+//   );
+
+//   geminiWrapper.append(selector);
+//   geminiWrapper.append(goToGeminiButton);
+//   mainSection.append(geminiWrapper);
+// }
+export function handleGetSuggestionsAtGeminiSite(referenceData) {
+  const url = 'https://gemini.google.com/app/c28b5bf17c1b8767';
+  console.log('clicked', referenceData);
+  if (
+    confirm(
+      'COPY prompt to clipbaord & CALL Gemini.com ?\n\nOver there: \n\nPASTE instructions and data into prompt field.\nHit ENTER.'
+    )
+  ) {
+    copyJSONToClipboard(referenceData);
+    callSiteByURL(url);
+  } else {
+    // Do nothing!
+  }
 }

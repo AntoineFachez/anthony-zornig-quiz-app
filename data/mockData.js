@@ -1,0 +1,102 @@
+export const mockData = [
+  {
+    question:
+      'Which actor plays the role of the mischievous god Loki in the MCU?',
+    answer: 'Tom Hiddleston',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Tom_Hiddleston_%2836109110291%29_%28cropped%29.jpg/800px-Tom_Hiddleston_%2836109110291%29_%28cropped%29.jpg',
+    imgAlt: 'Tom_Hiddleston_2019_by_Glenn_Francis',
+    bookMarkState: false,
+    possibleAnswers: [
+      {
+        possibleAnswer: 'Chris Hemsworth',
+      },
+      {
+        possibleAnswer: 'Tom Hiddleston',
+      },
+      {
+        possibleAnswer: 'Mark Ruffalo',
+      },
+    ],
+  },
+  {
+    question:
+      "What is the name of the powerful energy source that fuels Tony Stark's Iron Man suit?",
+    answer: 'Arc Reactor',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/9/9a/Iron_Man_Arc_Reactor_replica.jpg',
+    imgAlt: 'Iron_Man_Arc_Reactor_replica',
+    bookMarkState: false,
+    possibleAnswers: [
+      {
+        possibleAnswer: 'Tesseract',
+      },
+      {
+        possibleAnswer: 'Arc Reactor',
+      },
+      {
+        possibleAnswer: 'Infinity Stone',
+      },
+    ],
+  },
+  {
+    question:
+      'In which film does the character Vision first appear in the MCU?',
+    answer: 'Avengers: Age of Ultron',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/1/1b/Avengers_Age_of_Ultron.jpg',
+    imgAlt: 'Avengers_Age_of_Ultron',
+    bookMarkState: false,
+    possibleAnswers: [
+      {
+        possibleAnswer: 'Captain America: Civil War',
+      },
+      {
+        possibleAnswer: 'Avengers: Infinity War',
+      },
+      {
+        possibleAnswer: 'Avengers: Age of Ultron',
+      },
+    ],
+  },
+  {
+    question:
+      'What is the name of the planet where the Guardians of the Galaxy first meet?',
+    answer: 'Xandar',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/thumb/d/d7/Xandar_%28Earth-616%29_from_Marvel_Now!_Point_One_Vol_1_1_001.jpg/250px-Xandar_%28Earth-616%29_from_Marvel_Now!_Point_One_Vol_1_1_001.jpg',
+    imgAlt: 'Xandar_%28Earth-616%29_from_Marvel_Now!_Point_One_Vol_1_1_001',
+    bookMarkState: false,
+    possibleAnswers: [
+      {
+        possibleAnswer: 'Knowhere',
+      },
+      {
+        possibleAnswer: 'Morag',
+      },
+      {
+        possibleAnswer: 'Xandar',
+      },
+    ],
+  },
+  {
+    question:
+      'Which character, played by Benedict Cumberbatch, is a master of the mystic arts and protects the Earth from magical threats?',
+    answer: 'Doctor Strange',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/c/c7/Doctor_Strange_in_the_Multiverse_of_Madness_poster.jpg',
+    imgAlt: 'Doctor_Strange_in_the_Multiverse_of_Madness_poster',
+    bookMarkState: false,
+    possibleAnswers: [
+      {
+        possibleAnswer: 'Wong',
+      },
+      {
+        possibleAnswer: 'Doctor Strange',
+      },
+      {
+        possibleAnswer: 'The Ancient One',
+      },
+    ],
+  },
+];

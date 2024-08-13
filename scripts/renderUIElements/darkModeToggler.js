@@ -1,6 +1,8 @@
 import { getCurrentAppState } from '../states/appState.js';
 import { setDarkMode } from '../states/darkModeToggle.js';
+import { getBookMarkedItems } from '../views/renderBookMarkedItems.js';
 import { getCurrentQuizState } from '../views/renderQuiz.js';
+import { setButtonClass } from './footerButtons.js';
 
 const toggleButton = document.createElement('button');
 
@@ -9,7 +11,7 @@ export function createToggleButton() {
   setToggleDarkModeIcon(currentAppState);
 
   toggleButton.id = 'toggleButtonDarkMode';
-  toggleButton.classList.add('btn', 'btn__icon');
+  toggleButton.classList.add('btn', 'btn--footer');
 
   toggleButton.addEventListener('click', () => setToggleState());
 
@@ -27,24 +29,30 @@ export const setToggleState = () => {
     body.classList.remove(className);
     setToggleDarkModeIcon(currentAppState);
     setDarkMode(currentAppState);
+    setButtonClass(currentAppState);
   } else {
     currentAppState.darkMode = true;
     body.classList.add(className);
-    setToggleDarkModeIcon(currentAppState);
     setDarkMode(currentAppState);
+    setToggleDarkModeIcon(currentAppState);
+    setButtonClass(currentAppState);
   }
+  getBookMarkedItems(currentAppState);
 };
 export const setToggleDarkModeIcon = (currentAppState) => {
   // console.log(currentAppState);
 
   const darkMode = currentAppState.darkMode;
-  const darkModeIcon = '../../assets/icons/darkMode.png';
-  const lightModeIcon = '../../assets/icons/lightMode.png';
+  const darkModeIcon = '../../assets/icons/darkMode_active.png';
+  const lightModeIcon = '../../assets/icons/darkMode_inactive.png';
 
   // toggleButton.textContent = 'Toggle Dark Mode';
   toggleButton.style.backgroundImage = `url(${
     darkMode ? darkModeIcon : lightModeIcon
   })`;
-  toggleButton.style.backgroundSize = `1rem`;
+  toggleButton.style.backgroundSize = `1.6rem`;
   toggleButton.style.backgroundRepeat = `no-repeat`;
+  toggleButton.style.backgroundPosition = 'center';
+  toggleButton.style.cursor = 'pointer';
 };
+//

@@ -5,11 +5,11 @@ import { createButtonArrayCard } from './createButtons.js';
 
 export function createQuestionCard(quizState, item) {
   const mainSection = document.querySelector('main');
-  // mainSection.innerHTML = '';
+  const currentAppState = getCurrentAppState();
   const questionCard = document.createElement('section');
   questionCard.classList.add('question-card');
 
-  createBookMark(quizState, questionCard, item);
+  createBookMark(currentAppState, quizState, questionCard, item);
   createImg(questionCard, item);
   createQuestionText(questionCard, item);
   const resultText = createResultText(mainSection, questionCard);
@@ -22,7 +22,7 @@ export function createQuestionCard(quizState, item) {
   );
   createCheatButton(item, questionCard, quizState);
 
-  setDarkMode(getCurrentAppState());
+  setDarkMode(currentAppState);
   mainSection.appendChild(questionCard);
   return questionCard;
 }

@@ -7,7 +7,7 @@ let state;
 const mainSection = document.querySelector('.main-section');
 const bookmarkedArray = [];
 
-export function getBookMarkedItems() {
+export function getBookMarkedItems(currentAppState) {
   state = getCurrentQuizState();
 
   const bookMarkButton = document.querySelector('.--bookmarked');
@@ -15,8 +15,12 @@ export function getBookMarkedItems() {
   const bmArray = state.currentStateData.filter(
     (item) => item.bookMarkState === true
   );
-  bookMarkButton.textContent =
-    bmArray.length > 0 ? `Bookmark (${bmArray.length})` : 'Bookmark';
+  console.log(currentAppState.darkMode);
+
+  bookMarkButton.textContent = bmArray.length > 0 ? `${bmArray.length}` : '';
+  bookMarkButton.style.color =
+    currentAppState.darkMode === true ? '#fff' : '#000';
+  bookMarkButton.style.fontSize = '1rem';
   bookmarkedArray.push(bmArray);
   state.bookmarked = bmArray;
   return bmArray;
@@ -31,7 +35,7 @@ export function renderBookMarked() {
   });
   if (bookmarkedQuestions.length > 0) {
     bookmarkedQuestions.forEach((questionCard) => {
-      mainSection.appendChild(questionCard);
+      mainSection.append(questionCard);
     });
   }
 }

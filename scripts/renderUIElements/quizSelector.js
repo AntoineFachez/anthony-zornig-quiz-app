@@ -7,7 +7,7 @@ import {
   setCurrentQuizState,
 } from '../views/renderQuiz.js';
 
-export function createQuizSelect() {
+export function createQuizSelect(currentAppState) {
   const selectElement = document.createElement('select');
   selectElement.name = 'quizzies';
   selectElement.id = 'quizzies';
@@ -24,7 +24,7 @@ export function createQuizSelect() {
 
       setCurrentQuiz(selectedQuiz);
       renderQuiz();
-      getBookMarkedItems();
+      getBookMarkedItems(currentAppState);
       setDarkMode(getCurrentAppState());
     });
   }

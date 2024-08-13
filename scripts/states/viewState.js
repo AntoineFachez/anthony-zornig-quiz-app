@@ -1,5 +1,8 @@
 import { setCurrentViewIndicator } from '../renderUIElements/currentViewIndicator.js';
-import { setButtonClass } from '../renderUIElements/footerButtons.js';
+import {
+  initFooterButtons,
+  setButtonClass,
+} from '../renderUIElements/footerButtons.js';
 
 import { getCurrentQuizState, renderQuiz } from '../views/renderQuiz.js';
 import { renderBookMarked } from '../views/renderBookMarkedItems.js';
@@ -13,7 +16,7 @@ export function setNewViewState(currentAppState) {
 
   setCurrentViewIndicator(currentAppState);
   setButtonClass(currentAppState);
-
+  // initFooterButtons(availableAppStates, getCurrentAppState());
   if (currentAppState.currentView === 'quiz') {
     renderQuiz();
   } else if (currentAppState.currentView === 'bookmarked') {

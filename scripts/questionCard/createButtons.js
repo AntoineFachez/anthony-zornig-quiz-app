@@ -26,8 +26,10 @@ export function createButtonArrayCard(
       if (possibleAnswer.possibleAnswer === item.answer) {
         resultText.textContent = 'Correct!';
         quizState.countCorrectAnswers++;
+        multipleChoiceButton.classList.add('btn--multiple-choice--true');
       } else {
         resultText.textContent = 'Incorrect!';
+        multipleChoiceButton.classList.add('btn--multiple-choice--false');
       }
 
       questionCard.querySelectorAll('button').forEach((btn) => {

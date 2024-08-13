@@ -4,7 +4,7 @@ import {
   renderBookMarked,
 } from '../views/renderBookMarkedItems.js';
 
-export function createBookMark(quizState, questionCard, item) {
+export function createBookMark(currentAppState, quizState, questionCard, item) {
   const iconUrl = new URL(
     'https://raw.githubusercontent.com/AntoineFachez/anthony-zornig-quiz-app/main/assets/icons/',
     import.meta.url
@@ -46,16 +46,22 @@ export function createBookMark(quizState, questionCard, item) {
       console.error('Question not found in data array!');
     }
     // Update the bookmark icon
-
-    bookmarkIcon.src =
-      item.bookMarkState === false
-        ? `${iconUrl}bookmark_transparent.png`
-        : `${iconUrl}bookmark_filled.png`;
+    if (currentAppState.darkMode) {
+      bookmarkIcon.src =
+        item.bookMarkState === false
+          ? `${iconUrl}bookmark_darkMode_inactive.png`
+          : `${iconUrl}bookmark_darkMode_active.png`;
+    } else {
+      bookmarkIcon.src =
+        item.bookMarkState === false
+          ? `${iconUrl}bookmark_transparent.png`
+          : `${iconUrl}bookmark_filled.png`;
+    }
 
     bookmarkIcon.alt =
       item.bookMarkState === false ? 'Bookmark question' : 'marked question';
     // Get the current Bookmark states from LS
-    getBookMarkedItems();
+    getBookMarkedItems(currentAppState);
     if (getCurrentAppState.currentView === 'bookmarked') {
       renderBookMarked();
     }

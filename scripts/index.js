@@ -1,5 +1,6 @@
 import { availableAppStates } from '../data/availableAppStates.js';
 import {
+  getCurrentAppState,
   // currentGameState,
   initialAppState,
   setInitialAppState,
@@ -21,14 +22,14 @@ export function initApp() {
 
   //FIX: refactor readability: building the document
   const header = setCurrentViewIndicator(initialAppState); //* where is the user? in the header
-  const footer = initFooterButtons(availableAppStates, initialAppState);
+  const footer = initFooterButtons(availableAppStates, getCurrentAppState());
   const darkModeToggle = createToggleButton();
-  const quizSelect = createQuizSelect();
+  const quizSelect = createQuizSelect(initialAppState);
 
   darkModeToggle.classList.add('btn', 'darkModeToggle');
   quizSelect.classList.add('select', 'quizSelect');
 
-  getBookMarkedItems(); //* counter in the footerButton
+  getBookMarkedItems(initialAppState); //* counter in the footerButton
 
   //FIX: refactor readability: append items to main section
   menuContainerEl.append(darkModeToggle, quizSelect);

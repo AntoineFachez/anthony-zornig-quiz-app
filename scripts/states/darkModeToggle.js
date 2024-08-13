@@ -1,3 +1,4 @@
+import { getBookMarkedItems } from '../views/renderBookMarkedItems.js';
 import { getCurrentQuizState } from '../views/renderQuiz.js';
 
 export function setDarkMode(mode) {
@@ -11,7 +12,7 @@ export function setDarkMode(mode) {
   const header = document.querySelector('header');
   const footer = document.querySelector('footer');
   const cards = document.querySelectorAll('section');
-  console.log(cards);
+  // console.log(cards);
 
   if (mode.darkMode) {
     toggleTopBottom = 'bottom';

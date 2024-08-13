@@ -1,7 +1,7 @@
 import { setNewViewState } from './viewState.js';
 
 export let initialAppState = {
-  currentView: 'newCard',
+  currentView: 'quiz',
   darkMode: true,
   selectedNewCardState: 'suggest',
 };

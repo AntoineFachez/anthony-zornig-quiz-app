@@ -6,7 +6,7 @@ import { renderBookMarked } from '../views/renderBookMarkedItems.js';
 import { renderProfile } from '../views/renderProfile.js';
 import { setDarkMode } from './darkModeToggle.js';
 import { createCardSelectionDropdown } from '../renderUIElements/newCardProcessSelector.js';
-import { handleUseGeminiForSuggestions } from '../views/renderNewQuestionCard.js';
+import { handleUseGeminiForSuggestions } from '../views/renderCreateNewQuestionCards.js';
 
 export function setNewViewState(currentAppState) {
   const currentQuizState = getCurrentQuizState();

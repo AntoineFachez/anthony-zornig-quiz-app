@@ -24,7 +24,7 @@ export const mockData = [
       "What is the name of the powerful energy source that fuels Tony Stark's Iron Man suit?",
     answer: 'Arc Reactor',
     imgUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/9/9a/Iron_Man_Arc_Reactor_replica.jpg',
+      'https://upload.wikimedia.org/wikipedia/en/4/4a/Iron_Man_Mark_III_armor_from_Iron_Man_%282008_film%29.jpg',
     imgAlt: 'Iron_Man_Arc_Reactor_replica',
     bookMarkState: false,
     possibleAnswers: [
@@ -44,7 +44,7 @@ export const mockData = [
       'In which film does the character Vision first appear in the MCU?',
     answer: 'Avengers: Age of Ultron',
     imgUrl:
-      'https://upload.wikimedia.org/wikipedia/en/1/1b/Avengers_Age_of_Ultron.jpg',
+      'https://upload.wikimedia.org/wikipedia/en/f/fc/Paul_Bettany_as_Vision.jpg',
     imgAlt: 'Avengers_Age_of_Ultron',
     bookMarkState: false,
     possibleAnswers: [
@@ -64,7 +64,7 @@ export const mockData = [
       'What is the name of the planet where the Guardians of the Galaxy first meet?',
     answer: 'Xandar',
     imgUrl:
-      'https://upload.wikimedia.org/wikipedia/en/thumb/d/d7/Xandar_%28Earth-616%29_from_Marvel_Now!_Point_One_Vol_1_1_001.jpg/250px-Xandar_%28Earth-616%29_from_Marvel_Now!_Point_One_Vol_1_1_001.jpg',
+      'https://cdna.artstation.com/p/assets/images/images/049/621/010/large/xander-planet.jpg?1652905125',
     imgAlt: 'Xandar_%28Earth-616%29_from_Marvel_Now!_Point_One_Vol_1_1_001',
     bookMarkState: false,
     possibleAnswers: [
@@ -83,8 +83,7 @@ export const mockData = [
     question:
       'Which character, played by Benedict Cumberbatch, is a master of the mystic arts and protects the Earth from magical threats?',
     answer: 'Doctor Strange',
-    imgUrl:
-      'https://upload.wikimedia.org/wikipedia/en/c/c7/Doctor_Strange_in_the_Multiverse_of_Madness_poster.jpg',
+    imgUrl: 'https://cdn.kinocheck.com/i/3e1r3zcsy8.jpg',
     imgAlt: 'Doctor_Strange_in_the_Multiverse_of_Madness_poster',
     bookMarkState: false,
     possibleAnswers: [

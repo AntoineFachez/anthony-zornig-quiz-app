@@ -5,6 +5,7 @@ import {
 } from '../newQuestionCard/renderNewCard.js';
 import { createQuestionCard } from '../questionCard/createQuestionCard.js';
 import { mockData } from '../../data/mockData.js';
+import { manageLSData } from '../states/manageLSData.js';
 export function handleUseGeminiForSuggestions(
   createSelector,
   currentAppState,
@@ -23,7 +24,16 @@ export function handleUseGeminiForSuggestions(
   geminiWrapper.classList.add('new-card__gemini-wrapper');
   headerWrapper.classList.add('new-card__header-wrapper');
   bodyWrapper.classList.add('new-card__body-wrapper');
+  newQuestionsWrapper.classList.add('new-card__new-questions-wrapper');
+  dropField.classList.add('new-card__dropField');
   goToGeminiButton.classList.add('btn');
+
+  geminiWrapper.style.width = '100%';
+  geminiWrapper.style.height = '100%';
+  bodyWrapper.style.width = '100%';
+  bodyWrapper.style.height = '100%';
+  dropField.style.width = '100%';
+  dropField.style.height = '100%';
 
   goToGeminiButton.textContent = 'https://gemini.google.com';
 
@@ -43,13 +53,28 @@ export function handleUseGeminiForSuggestions(
     const newQuizData = JSON.parse(event.target.value);
 
     if (newQuizData) {
+      // bodyWrapper.innerHTML = '';
+      geminiWrapper.style.height = 'fit-content';
+      bodyWrapper.style.height = 'fit-content';
+      dropField.style.width = '40ch';
+      dropField.style.height = '10ch';
       //shallow copy of currentQuizState
       const shallowCopy = currentQuizState;
       shallowCopy.currentStateData = newQuizData;
       shallowCopy.currentStateData.forEach((question) => {
+        const btnStoreNewQuestionDataToLS = document.createElement('button');
+        btnStoreNewQuestionDataToLS.textContent = 'add question to Quiz';
+        btnStoreNewQuestionDataToLS.addEventListener('click', () =>
+          console.log('clicked')
+        );
+        const questionCardWrapper = document.createElement('div');
         const newQuestionCard = createQuestionCard(shallowCopy, question);
+        questionCardWrapper.append(
+          btnStoreNewQuestionDataToLS,
+          newQuestionCard
+        );
         console.log(newQuestionCard);
-        newQuestionsWrapper.append(newQuestionCard);
+        newQuestionsWrapper.append(questionCardWrapper);
       });
     } else {
     }

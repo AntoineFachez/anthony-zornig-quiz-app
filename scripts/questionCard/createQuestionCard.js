@@ -17,13 +17,13 @@ export function createQuestionCard(quizState, item) {
     quizState,
     questionCard,
     resultText,
-    createQuestionCard
+    item
+    // createQuestionCard
   );
   createCheatButton(item, questionCard, quizState);
 
-  mainSection.appendChild(questionCard);
-
   setDarkMode(getCurrentAppState());
+  mainSection.appendChild(questionCard);
   return questionCard;
 }
 

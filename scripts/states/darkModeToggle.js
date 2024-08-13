@@ -10,7 +10,8 @@ export function setDarkMode(mode) {
   const body = document.querySelector('body');
   const header = document.querySelector('header');
   const footer = document.querySelector('footer');
-  const card = document.querySelector('section');
+  const cards = document.querySelectorAll('section');
+  console.log(cards);
 
   if (mode.darkMode) {
     toggleTopBottom = 'bottom';
@@ -30,14 +31,18 @@ export function setDarkMode(mode) {
       header.style.background = primary;
 
       body.style.background = primary;
-      card.style.background = secondary;
+      cards.forEach((card) => {
+        card.style.background = secondary;
+      });
 
       footer.style.background = primary;
     } else {
       header.style.background = accent1;
 
       body.style.background = secondary;
-      card.style.background = primary;
+      cards.forEach((card) => {
+        card.style.background = primary;
+      });
 
       footer.style.background = accent2;
     }

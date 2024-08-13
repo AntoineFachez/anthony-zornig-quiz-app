@@ -130,7 +130,7 @@ header .current-view-indicator {
   /* flex-direction: column; */
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   /* background-color: white; */
   /* gap: 2rem; */
   overflow: auto;
@@ -169,7 +169,7 @@ header .current-view-indicator {
   position: relative;
   width: 100%;
   max-width: 30ch;
-  height: 500px;
+  height: 440px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -211,7 +211,7 @@ header .current-view-indicator {
   width: 100%;
   /* max-width: 40ch; */
   height: 100%;
-  max-height: 240px;
+  max-height: 200px;
   /* padding: 1rem; */
   object-fit: contain;
   /* border-radius: var(--border-radius); */
@@ -246,12 +246,14 @@ header .current-view-indicator {
 .new-card__gemini-wrapper {
   display: flex;
   flex-direction: column;
+  /* padding: 5rem 0; */
 }
 .new-card__header-wrapper {
-  position: absolute;
+  z-index: 10;
+  position: fixed;
   top: 5rem;
   left: 0;
-  width: 100%;
+  width: fit-content;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -263,6 +265,16 @@ header .current-view-indicator {
 .new-card__body-wrapper {
   display: flex;
   flex-direction: column;
+  padding-top: 6rem;
+  gap: 1rem;
+}
+.new-card__new-questions-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  /* padding-top: 3rem; */
+  /* margin-bottom: 4rem; */
+  gap: 1rem;
 }
 .label-new-question {
   font-family: var(--font-family-marvel);

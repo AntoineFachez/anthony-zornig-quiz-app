@@ -2,7 +2,7 @@ import {
   // handleUseGeminiForSuggestions,
   renderNewCard,
 } from '../newQuestionCard/renderNewCard.js';
-import { handleUseGeminiForSuggestions } from '../views/renderNewQuestionCard.js';
+import { handleUseGeminiForSuggestions } from '../views/renderCreateNewQuestionCards.js';
 
 export function createCardSelectionDropdown(currentAppState, currentQuizState) {
   const mainSection = document.querySelector('.main-section');
@@ -12,12 +12,12 @@ export function createCardSelectionDropdown(currentAppState, currentQuizState) {
   const suggestOption = document.createElement('option');
   suggestOption.value = 'suggest';
   suggestOption.textContent = 'Get suggestion';
-  dropdown.appendChild(suggestOption);
+  dropdown.append(suggestOption);
 
   const manualOption = document.createElement('option');
   manualOption.value = 'manually';
   manualOption.textContent = 'Create manually';
-  dropdown.appendChild(manualOption);
+  dropdown.append(manualOption);
   // goToGemini(createSelector, currentAppState, currentQuizState);
   // Add event listener for change
   dropdown.addEventListener('change', (event) => {

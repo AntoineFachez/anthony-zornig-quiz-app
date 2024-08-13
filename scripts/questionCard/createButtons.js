@@ -1,7 +1,12 @@
 import { renderQuiz } from '../views/renderQuiz.js';
 
-export function createButtonArrayCard(quizState, questionCard, resultText) {
-  const item = quizState.currentStateData[quizState.currentQuestionIndex];
+export function createButtonArrayCard(
+  quizState,
+  questionCard,
+  resultText,
+  item
+) {
+  // const item = quizState.currentStateData[quizState.currentQuestionIndex];
   const btnWrapper = document.createElement('div');
   btnWrapper.classList.add('btn-wrapper');
 

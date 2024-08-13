@@ -159,8 +159,10 @@ export const colorPalette = [
 ];
 
 let lsObjectName = 'quizDataFortnite';
+const quizLanguage = 'german';
 export const quizStateFortnite = {
   quizName: 'Fortnite',
+  language: quizLanguage,
   allQuestionsAnswered: false,
   lsObjectName: lsObjectName,
   currentStateData: manageLSData(data, lsObjectName),
@@ -170,5 +172,5 @@ export const quizStateFortnite = {
   progressPercent: 0,
   correctAnswersText: '',
   colorPalette: colorPaletteSeason6,
-  geminiGenerateInstructionPrompt: `here is an array of json objects of a trivia quiz. Please have a look at it and generate 5 more questions in context of ${'Fortnite'}. You could randomly choose topics such as questions about the games or background information such as Disney coops, creative Teams or the huge gamers and streamers. Have fun with playing around. If you choose to please suggest only image links from wikipedia. Return only json objects exactly with the data structure as I provided. Please keep the keys in english as is and return the values in the provided quiz language ${quizLanguage}. Thnx!`,
+  geminiGenerateInstructionPrompt: `Here is an array of json objects of a trivia quiz. Please have a look at it and generate 5 more questions in context of ${'Fortnite'}. You could randomly choose topics such as questions about the games or background information such as Disney coops, creative Teams or the huge gamers and streamers. Have fun with playing around. If you choose to please suggest only image links from wikipedia. Return only json objects exactly with the data structure as I provided. Please keep the keys in english as is and return the values in the provided quiz language ${quizLanguage}. Thnx!`,
 };

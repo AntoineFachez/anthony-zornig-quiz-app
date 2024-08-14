@@ -1,8 +1,10 @@
 import { getBookMarkedItems } from '../scripts/views/renderBookMarkedItems.js';
 const iconBaseUrl = new URL(
-  'https://raw.githubusercontent.com/AntoineFachez/anthony-zornig-quiz-app/features/assets/icons/',
+  'https://github.com/AntoineFachez/anthony-zornig-quiz-app/blob/features/assets/icons/',
+  // 'https://raw.githubusercontent.com/AntoineFachez/anthony-zornig-quiz-app/features/assets/icons/',
   import.meta.url
 );
+
 const bookmark_darkMode_active = 'icons/bookmark_darkMode_active.png';
 const bookmark_darkMode_inactive = 'icons/bookmark_darkMode_inactive.png';
 const bookmark_lightMode_active = 'icons/bookmark_lightMode_active.png';

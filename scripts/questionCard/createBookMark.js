@@ -6,7 +6,7 @@ import {
 
 export function createBookMark(currentAppState, quizState, questionCard, item) {
   const iconBaseUrl = new URL(
-    'https://raw.githubusercontent.com/AntoineFachez/anthony-zornig-quiz-app/main/assets/icons/',
+    'https://raw.githubusercontent.com/AntoineFachez/anthony-zornig-quiz-app/features/assets/icons/',
     import.meta.url
   );
   const bookmarkDiv = document.createElement('div');

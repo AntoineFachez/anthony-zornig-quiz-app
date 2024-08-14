@@ -5,7 +5,7 @@ import {
 } from '../views/renderBookMarkedItems.js';
 
 export function createBookMark(currentAppState, quizState, questionCard, item) {
-  const iconUrl = new URL(
+  const iconBaseUrl = new URL(
     'https://raw.githubusercontent.com/AntoineFachez/anthony-zornig-quiz-app/main/assets/icons/',
     import.meta.url
   );
@@ -19,8 +19,8 @@ export function createBookMark(currentAppState, quizState, questionCard, item) {
 
   bookmarkIcon.src =
     item.bookMarkState === false
-      ? `${iconUrl}bookmark_transparent.png`
-      : `${iconUrl}bookmark_filled.png`;
+      ? `${iconBaseUrl}bookmark_lightMode_inactive.png`
+      : `${iconBaseUrl}bookmark_lightMode_active.png`;
 
   bookmarkIcon.alt =
     item.bookMarkState === false ? 'Bookmark question' : 'marked question';
@@ -50,13 +50,13 @@ export function createBookMark(currentAppState, quizState, questionCard, item) {
     if (currentAppState.darkMode === true) {
       bookmarkIcon.src =
         item.bookMarkState === false
-          ? `${iconUrl}bookmark_darkMode_inactive.png`
-          : `${iconUrl}bookmark_darkMode_active.png`;
+          ? `${iconBaseUrl}bookmark_darkMode_inactive.png`
+          : `${iconBaseUrl}bookmark_darkMode_active.png`;
     } else {
       bookmarkIcon.src =
         item.bookMarkState === false
-          ? `${iconUrl}bookmark_transparent.png`
-          : `${iconUrl}bookmark_filled.png`;
+          ? `${iconBaseUrl}bookmark_transparent.png`
+          : `${iconBaseUrl}bookmark_filled.png`;
     }
 
     bookmarkIcon.alt =

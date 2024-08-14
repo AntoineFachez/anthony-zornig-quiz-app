@@ -117,36 +117,7 @@ export function setImageLink(e) {
 
   return e.target.value;
 }
-// export function handleUseGeminiForSuggestions(
-//   createSelector,
-//   currentAppState,
-//   currentQuizState
-// ) {
-//   const mainSection = document.querySelector('.main-section');
-//   mainSection.innerHTML = '';
-//   const geminiWrapper = document.createElement('div');
-//   geminiWrapper.classList.add('gemini-wrapper');
 
-//   const selector = createSelector(currentAppState, currentQuizState);
-//   console.log(selector);
-
-//   const goToGeminiButton = document.createElement('button');
-//   goToGeminiButton.classList.add('btn');
-//   goToGeminiButton.textContent = 'https://gemini.google.com';
-
-//   const referenceData =
-//     currentQuizState.geminiGenerateInstructionPrompt +
-//     '… ' +
-//     JSON.stringify(currentQuizState.currentStateData);
-
-//   goToGeminiButton.addEventListener('click', () =>
-//     handleGetSuggestionsAtGeminiSite(referenceData)
-//   );
-
-//   geminiWrapper.append(selector);
-//   geminiWrapper.append(goToGeminiButton);
-//   mainSection.append(geminiWrapper);
-// }
 export function handleGetSuggestionsAtGeminiSite(referenceData) {
   const url = 'https://gemini.google.com/app/c28b5bf17c1b8767';
   console.log('clicked', referenceData);

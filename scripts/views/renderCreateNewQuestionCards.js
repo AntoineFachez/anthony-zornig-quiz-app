@@ -32,8 +32,10 @@ export function handleUseGeminiForSuggestions(
   geminiWrapper.style.height = '100%';
   bodyWrapper.style.width = '100%';
   bodyWrapper.style.height = '100%';
-  dropField.style.width = '100%';
+  dropField.style.width = '60ch';
+  // dropField.style.maxWidth = '60ch';
   dropField.style.height = '100%';
+  // dropField.style.maxHeight = '400px';
 
   goToGeminiButton.textContent = 'https://gemini.google.com';
 
@@ -53,22 +55,24 @@ export function handleUseGeminiForSuggestions(
     const newQuizData = JSON.parse(event.target.value);
 
     if (newQuizData) {
-      // bodyWrapper.innerHTML = '';
+      bodyWrapper.innerHTML = '';
       geminiWrapper.style.height = 'fit-content';
       bodyWrapper.style.height = 'fit-content';
       dropField.style.width = '40ch';
       dropField.style.height = '10ch';
-      //shallow copy of currentQuizState
-      const shallowCopy = currentQuizState;
-      shallowCopy.currentStateData = newQuizData;
-      shallowCopy.currentStateData.forEach((question) => {
+
+      currentQuizState.lsObjectNameNewQuestions = `${currentQuizState.lsObjectName}New`;
+      console.log(currentQuizState);
+
+      currentQuizState.currentStateNewQuizData = newQuizData;
+      currentQuizState.currentStateNewQuizData.forEach((question) => {
         const btnStoreNewQuestionDataToLS = document.createElement('button');
         btnStoreNewQuestionDataToLS.textContent = 'add question to Quiz';
         btnStoreNewQuestionDataToLS.addEventListener('click', () =>
           console.log('clicked')
         );
         const questionCardWrapper = document.createElement('div');
-        const newQuestionCard = createQuestionCard(shallowCopy, question);
+        const newQuestionCard = createQuestionCard(currentQuizState, question);
         questionCardWrapper.append(
           btnStoreNewQuestionDataToLS,
           newQuestionCard

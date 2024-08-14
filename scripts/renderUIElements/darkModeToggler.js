@@ -27,16 +27,17 @@ export const setToggleState = () => {
   if (currentAppState.darkMode) {
     currentAppState.darkMode = false;
     body.classList.remove(className);
-    setToggleDarkModeIcon(currentAppState);
+    // setToggleDarkModeIcon(currentAppState);
     setDarkMode(currentAppState);
     setButtonClass(currentAppState);
   } else {
     currentAppState.darkMode = true;
     body.classList.add(className);
     setDarkMode(currentAppState);
-    setToggleDarkModeIcon(currentAppState);
+    // setToggleDarkModeIcon(currentAppState);
     setButtonClass(currentAppState);
   }
+  setToggleDarkModeIcon(currentAppState);
   getBookMarkedItems(currentAppState);
 };
 export const setToggleDarkModeIcon = (currentAppState) => {

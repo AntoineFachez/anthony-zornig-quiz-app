@@ -1,9 +1,15 @@
-export function setCurrentViewIndicator(appState) {
+export function setCurrentViewIndicator(appState, currentQuiz) {
+  // console.log(currentQuiz);
+
+  const currentQuizIndicator = document.getElementById(
+    'current-quiz-indicator'
+  );
   const currentViewIndicator = document.getElementById(
     'current-view-indicator'
   );
-
   if (currentViewIndicator) {
+    currentQuizIndicator.textContent =
+      currentQuiz.quizName.toUpperCase() + "'s  ";
     currentViewIndicator.textContent = appState.currentView;
     setTimeout(() => {
       currentViewIndicator.classList.add('current-view--changed');

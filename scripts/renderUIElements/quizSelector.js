@@ -1,11 +1,14 @@
 import { availableQuizzies } from '../../data/availableQuizzies.js';
+import { getCurrentAppState } from '../states/appState.js';
 import { setDarkMode } from '../states/darkModeToggle.js';
 import { getBookMarkedItems } from '../views/renderBookMarkedItems.js';
 import {
+  getCurrentQuizState,
   renderQuiz,
   setCurrentQuiz,
   setCurrentQuizState,
 } from '../views/renderQuiz.js';
+import { setCurrentViewIndicator } from './currentViewIndicator.js';
 
 export function createQuizSelect(currentAppState) {
   const selectElement = document.createElement('select');
@@ -26,6 +29,7 @@ export function createQuizSelect(currentAppState) {
       renderQuiz();
       getBookMarkedItems(currentAppState);
       setDarkMode(getCurrentAppState());
+      setCurrentViewIndicator(currentAppState, getCurrentQuizState());
     });
   }
   return selectElement;

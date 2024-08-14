@@ -10,11 +10,12 @@ import { renderProfile } from '../views/renderProfile.js';
 import { setDarkMode } from './darkModeToggle.js';
 import { createCardSelectionDropdown } from '../renderUIElements/newCardProcessSelector.js';
 import { handleUseGeminiForSuggestions } from '../views/renderCreateNewQuestionCards.js';
+import { setToggleDarkModeIcon } from '../renderUIElements/darkModeToggler.js';
 
 export function setNewViewState(currentAppState) {
   const currentQuizState = getCurrentQuizState();
 
-  setCurrentViewIndicator(currentAppState);
+  setCurrentViewIndicator(currentAppState, currentQuizState);
   setButtonClass(currentAppState);
   // initFooterButtons(availableAppStates, getCurrentAppState());
   if (currentAppState.currentView === 'quiz') {
@@ -32,6 +33,6 @@ export function setNewViewState(currentAppState) {
   } else {
   }
   setDarkMode(currentAppState);
-
+  setToggleDarkModeIcon(currentAppState);
   return currentAppState;
 }

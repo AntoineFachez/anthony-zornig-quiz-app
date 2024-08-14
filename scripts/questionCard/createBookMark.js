@@ -45,8 +45,9 @@ export function createBookMark(currentAppState, quizState, questionCard, item) {
     } else {
       console.error('Question not found in data array!');
     }
-    // Update the bookmark icon
-    if (currentAppState.darkMode) {
+    console.log(currentAppState.darkMode);
+
+    if (currentAppState.darkMode === true) {
       bookmarkIcon.src =
         item.bookMarkState === false
           ? `${iconUrl}bookmark_darkMode_inactive.png`

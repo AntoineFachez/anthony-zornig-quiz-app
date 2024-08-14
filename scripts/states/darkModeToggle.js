@@ -1,3 +1,4 @@
+import { setButtonClass } from '../renderUIElements/footerButtons.js';
 import { getBookMarkedItems } from '../views/renderBookMarkedItems.js';
 import { getCurrentQuizState } from '../views/renderQuiz.js';
 
@@ -46,6 +47,7 @@ export function setDarkMode(mode) {
       });
 
       footer.style.background = accent2;
+      setButtonClass(currentAppState);
     }
   } catch (error) {
     header.style.background = accent1;

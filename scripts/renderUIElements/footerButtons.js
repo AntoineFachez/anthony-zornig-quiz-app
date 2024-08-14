@@ -1,19 +1,23 @@
 import { getCurrentAppState } from '../states/appState.js';
 import { setNewViewState } from '../states/viewState.js';
+import { setToggleDarkModeIcon } from './darkModeToggler.js';
 
 const footer = document.getElementById('footer');
 
 export function initFooterButtons(availableAppStates, currentAppState) {
+  const buttonWrapper = document.createElement('div');
   availableAppStates.forEach((buttonData) => {
     const bt = renderButton(availableAppStates, currentAppState, buttonData);
 
     // if (buttonData.callFn) {
     //   buttonData.callFn(); // Execute the function
     // }
-    footer.appendChild(bt);
+    // buttonWrapper.append(bt);
+    footer.append(bt);
   });
 
   setButtonClass(currentAppState);
+  return buttonWrapper;
 }
 
 export function renderButton(availableAppStates, currentAppState, buttonData) {
@@ -33,12 +37,8 @@ export function renderButton(availableAppStates, currentAppState, buttonData) {
     button.classList.add(`--${buttonData.view}`); //--bookmarked
     button.addEventListener('click', () => {
       try {
-        // console.log(button.data, buttonData.view);
-        console.log(currentAppState.currentView);
         currentAppState.currentView = buttonData.view;
-        // setNewViewState({ currentView: buttonData.view });
         setNewViewState(currentAppState);
-        // setButtonClass(buttonData);
       } catch (error) {
         console.error('Error in setNewViewState:', error);
       }
@@ -63,7 +63,7 @@ export function setButtonClass(currentAppState) {
       const iconPath = button?.data?.icons[lightOrDarkMode].active;
       button.style.backgroundImage = `url(../../assets/${iconPath})`;
       button.style.backgroundPosition = 'center';
-      button.style.color = '#000';
+      button.style.color = currentAppState.darkMode ? '#000' : '#fff';
 
       button.classList.add('btn--view-inFocus');
     } else {
@@ -71,7 +71,7 @@ export function setButtonClass(currentAppState) {
       button.style.backgroundImage = `url(../../assets/${iconPath})`;
       button.style.backgroundPosition = 'center';
       button.style.cursor = 'pointer';
-      button.style.color = '#fff';
+      button.style.color = currentAppState.darkMode ? '#fff' : '#000';
       // button.style.backgroundImage = `url(${iconPath})`;
       button.classList.remove('btn--view-inFocus');
     }

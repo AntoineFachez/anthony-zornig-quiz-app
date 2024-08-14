@@ -62,7 +62,7 @@ export function renderProfile() {
     links.push(aHrefButton);
   });
 
-  const darkModeToggle = createToggleButton();
+  // const darkModeToggle = createToggleButton();
 
   headWrapper.appendChild(profilePicture);
   headWrapper.appendChild(name);

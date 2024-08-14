@@ -12,15 +12,17 @@ export function getBookMarkedItems(currentAppState) {
 
   const bookMarkButton = document.querySelector('.--bookmarked');
 
-  const bmArray = state.currentStateData.filter(
-    (item) => item.bookMarkState === true
-  );
+  const bmArray = state.currentStateData.filter((item) => {
+    return item.bookMarkState === true;
+  });
   console.log(currentAppState.darkMode);
 
   bookMarkButton.textContent = bmArray.length > 0 ? `${bmArray.length}` : '';
   bookMarkButton.style.color =
     currentAppState.darkMode === true ? '#fff' : '#000';
-  bookMarkButton.style.fontSize = '1rem';
+  bookMarkButton.style.fontSize = '1.1rem';
+  bookMarkButton.style.fontWeight = '100';
+  bookMarkButton.style.paddingBottom = '0.7rem';
   bookmarkedArray.push(bmArray);
   state.bookmarked = bmArray;
   return bmArray;
@@ -28,14 +30,17 @@ export function getBookMarkedItems(currentAppState) {
 
 export function renderBookMarked() {
   mainSection.innerHTML = '';
-
+  const bookmarkWraper = document.createElement('div');
+  bookmarkWraper.classList.add('new-card__new-questions-wrapper');
   const bookmarkedQuestions = [];
   currentQuizState.bookmarked.forEach((item) => {
+    // createBookMark(currentAppState, currentQuizState, '', item);
     bookmarkedQuestions.push(createQuestionCard(currentQuizState, item));
   });
   if (bookmarkedQuestions.length > 0) {
     bookmarkedQuestions.forEach((questionCard) => {
-      mainSection.append(questionCard);
+      bookmarkWraper.append(questionCard);
     });
   }
+  mainSection.append(bookmarkWraper);
 }

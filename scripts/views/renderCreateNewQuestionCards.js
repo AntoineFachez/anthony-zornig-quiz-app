@@ -20,6 +20,7 @@ export function handleUseGeminiForSuggestions(
   const goToGeminiButton = document.createElement('button');
   const selector = createSelector(currentAppState, currentQuizState);
   const newQuestionsWrapper = document.createElement('div');
+  const btnFillDropField = document.createElement('button');
 
   geminiWrapper.classList.add('new-card__gemini-wrapper');
   headerWrapper.classList.add('new-card__header-wrapper');
@@ -34,10 +35,10 @@ export function handleUseGeminiForSuggestions(
   bodyWrapper.style.height = '100%';
   dropField.style.width = '60ch';
   // dropField.style.maxWidth = '60ch';
-  dropField.style.height = '100%';
-  // dropField.style.maxHeight = '400px';
+  dropField.style.height = '400px';
 
   goToGeminiButton.textContent = 'https://gemini.google.com';
+  btnFillDropField.textContent = 'fill with mock data';
 
   const referenceData =
     currentQuizState.geminiGenerateInstructionPrompt +
@@ -47,8 +48,12 @@ export function handleUseGeminiForSuggestions(
   goToGeminiButton.addEventListener('click', () =>
     handleGetSuggestionsAtGeminiSite(referenceData)
   );
-
-  dropField.value = JSON.stringify(mockData);
+  const fillDropfieldWithValues = () => {
+    dropField.value = JSON.stringify(mockData);
+  };
+  const deleteDropfieldValues = () => {
+    dropField.value = '';
+  };
 
   dropField.addEventListener('blur', (event) => {
     event.preventDefault();
@@ -84,8 +89,15 @@ export function handleUseGeminiForSuggestions(
     }
     // return false;
   });
+  btnFillDropField.addEventListener('click', () => {
+    if (dropField.value) {
+      deleteDropfieldValues();
+    } else {
+      fillDropfieldWithValues();
+    }
+  });
   headerWrapper.append(selector);
-  bodyWrapper.append(goToGeminiButton, dropField);
+  bodyWrapper.append(goToGeminiButton, btnFillDropField, dropField);
   geminiWrapper.append(headerWrapper, bodyWrapper);
 
   mainSection.append(geminiWrapper, newQuestionsWrapper);

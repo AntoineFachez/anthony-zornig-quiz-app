@@ -1,3 +1,4 @@
+import { getBookMarkedItems } from '../views/renderBookMarkedItems.js';
 import { setNewViewState } from './viewState.js';
 
 export let initialAppState = {
@@ -13,7 +14,6 @@ const mainSection = document.querySelector('.main-section');
 export function setInitialAppState(initialAppState) {
   mainSection.innerHTML = '';
   currentAppState = initialAppState;
-
   setNewViewState(currentAppState);
 }
 export function getCurrentAppState() {

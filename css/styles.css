@@ -137,6 +137,7 @@ header .current-view-indicator {
 }
 .progress-bar {
   position: fixed;
+  z-index: 100;
   /* top: var(--paddingBodyTop); */
   top: 4rem;
   width: 100%; /* Or set a fixed width */
@@ -275,11 +276,13 @@ header .current-view-indicator {
   /* overflow: visible; */
 }
 .new-card__new-questions-wrapper {
+  /* height: '100%'; */
+
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  /* padding-top: 3rem; */
-  /* margin-bottom: 4rem; */
+  padding: 3rem;
+  margin-bottom: 4rem;
   gap: 1rem;
 }
 .label-new-question {

@@ -5,7 +5,10 @@ import {
 } from '../renderUIElements/footerButtons.js';
 
 import { getCurrentQuizState, renderQuiz } from '../views/renderQuiz.js';
-import { renderBookMarked } from '../views/renderBookMarkedItems.js';
+import {
+  getBookMarkedItems,
+  renderBookMarked,
+} from '../views/renderBookMarkedItems.js';
 import { renderProfile } from '../views/renderProfile.js';
 import { setDarkMode } from './darkModeToggle.js';
 import { createCardSelectionDropdown } from '../renderUIElements/newCardProcessSelector.js';
@@ -34,5 +37,6 @@ export function setNewViewState(currentAppState) {
   }
   setDarkMode(currentAppState);
   setToggleDarkModeIcon(currentAppState);
+  // getBookMarkedItems(currentAppState);
   return currentAppState;
 }

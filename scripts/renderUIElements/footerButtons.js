@@ -61,15 +61,17 @@ export function setButtonClass(currentAppState) {
     button.style.backgroundRepeat = `no-repeat`;
     if (button?.data?.view === currentAppState.currentView) {
       const iconPath = button?.data?.icons[lightOrDarkMode].active;
-      button.style.backgroundImage = `url(../../assets/${iconPath})`;
-      button.style.backgroundPosition = 'center';
+      button.innerHTML = iconPath;
+      // button.style.backgroundImage = `url(../../assets/${iconPath})`;
+      // button.style.backgroundPosition = 'center';
       button.style.color = currentAppState.darkMode ? '#000' : '#fff';
 
       button.classList.add('btn--view-inFocus');
     } else {
       const iconPath = button?.data?.icons[lightOrDarkMode].inactive;
-      button.style.backgroundImage = `url(../../assets/${iconPath})`;
-      button.style.backgroundPosition = 'center';
+      button.innerHTML = iconPath;
+      // button.style.backgroundImage = `url(../../assets/${iconPath})`;
+      // button.style.backgroundPosition = 'center';
       button.style.cursor = 'pointer';
       button.style.color = currentAppState.darkMode ? '#fff' : '#000';
       // button.style.backgroundImage = `url(${iconPath})`;

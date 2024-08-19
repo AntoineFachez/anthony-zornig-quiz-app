@@ -1,0 +1,376 @@
+import { manageLSData } from '../utils/manageLSData.js';
+
+export const data = [
+  {
+    question:
+      'What is the name of the first Marvel Cinematic Universe film, released in 2008?',
+    answer: 'Iron Man',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/0/02/Iron_Man_%282008_film%29_poster.jpg',
+    imgAlt: 'Iron_Man_%282008_film%29_poster',
+    bookMarkState: false,
+    possibleAnswers: [
+      { possibleAnswer: 'The Incredible Hulk' },
+      { possibleAnswer: 'Iron Man' },
+      { possibleAnswer: 'Captain America: The First Avenger' },
+    ],
+  },
+  {
+    question:
+      'What is the name of the powerful artifact that Thanos seeks to collect in the MCU?',
+    answer: 'Infinity Stones',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/7/72/The_Infinity_Stones.jpg',
+    imgAlt: 'The_Infinity_Stones',
+    bookMarkState: true,
+    possibleAnswers: [
+      { possibleAnswer: 'Infinity Stones' },
+      { possibleAnswer: 'Cosmic Cubes' },
+      { possibleAnswer: 'Reality Shards' },
+    ],
+  },
+  {
+    question: 'What is the real name of the superhero known as Iron Man?',
+    answer: 'Tony Stark',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/4/47/Iron_Man_%28circa_2018%29.png',
+    imgAlt: 'Iron_Man_%28circa_2018%29',
+    bookMarkState: true,
+    possibleAnswers: [
+      { possibleAnswer: 'Tony Stark' },
+      { possibleAnswer: 'Bruce Banner' },
+      { possibleAnswer: 'Peter Parker' },
+    ],
+  },
+  {
+    question:
+      'Which MCU film features the first appearance of the character Black Panther?',
+    answer: 'Captain America: Civil War',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/5/53/Captain_America_Civil_War_poster.jpg',
+    imgAlt: 'Captain_America_Civil_War_poster',
+    bookMarkState: false,
+    possibleAnswers: [
+      { possibleAnswer: 'Black Panther' },
+      { possibleAnswer: 'Captain America: Civil War' },
+      { possibleAnswer: 'Avengers: Infinity War' },
+    ],
+  },
+  {
+    question: "What is the name of Thor's enchanted hammer?",
+    answer: 'Mjolnir',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/4/4c/The_third_gift_%E2%80%94_an_enormous_hammer_by_Elmer_Boyd_Smith.jpg',
+    imgAlt: '94_an_enormous_hammer_by_Elmer_Boyd_Smith',
+    bookMarkState: false,
+    possibleAnswers: [
+      { possibleAnswer: 'Stormbreaker' },
+      { possibleAnswer: 'Mjolnir' },
+      { possibleAnswer: 'Hofund' },
+    ],
+  },
+  {
+    question: 'Which actor portrays the character Captain America in the MCU?',
+    answer: 'Chris Evans',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/ChrisEvans2023.jpg/800px-ChrisEvans2023.jpg',
+    imgAlt: 'ChrisEvans2023',
+    bookMarkState: false,
+    possibleAnswers: [
+      { possibleAnswer: 'Chris Hemsworth' },
+      { possibleAnswer: 'Chris Pratt' },
+      { possibleAnswer: 'Chris Evans' },
+    ],
+  },
+  {
+    question:
+      'What is the name of the organization founded by Nick Fury to protect the Earth from various threats in the MCU?',
+    answer:
+      'S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement, and Logistics Division)',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/e/ef/S.H.I.E.L.D._%28Marvel_616_Universe%29.png',
+    imgAlt: 'S.H.I.E.L.D._%28Marvel_616_Universe',
+    bookMarkState: false,
+    possibleAnswers: [
+      {
+        possibleAnswer:
+          'S.W.O.R.D. (Sentient World Observation and Response Department)',
+      },
+      {
+        possibleAnswer:
+          'S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement, and Logistics Division)',
+      },
+      { possibleAnswer: 'A.I.M. (Advanced Idea Mechanics)' },
+    ],
+  },
+  {
+    question:
+      'Which film marks the first appearance of the character Spider-Man in the MCU?',
+    answer: 'Captain America: Civil War',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/e/ee/Spider-Man_and_Captain_America_in_Doctor_Doom%27s_Revenge_cover.jpg',
+    imgAlt: 'Spider-Man_and_Captain_America_in_Doctor_Doom',
+    bookMarkState: true,
+    possibleAnswers: [
+      { possibleAnswer: 'Spider-Man: Homecoming' },
+      { possibleAnswer: 'Captain America: Civil War' },
+      { possibleAnswer: 'Iron Man 2' },
+    ],
+  },
+  {
+    question:
+      "What is the name of the fictional African nation ruled by T'Challa, also known as Black Panther?",
+    answer: 'Wakanda',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Lake_Turkana_vicinity.jpg/1024px-Lake_Turkana_vicinity.jpg',
+    imgAlt: 'Lake_Turkana_vicinity',
+    bookMarkState: false,
+    possibleAnswers: [
+      { possibleAnswer: 'Zamunda' },
+      { possibleAnswer: 'Wakanda' },
+      { possibleAnswer: 'Latveria' },
+    ],
+  },
+  {
+    question:
+      'In which MCU film does the character Thanos finally gather all six Infinity Stones and snap his fingers to wipe out half of all life in the universe?',
+    answer: 'Avengers: Infinity War',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/c/cd/Thanos_Infinity_4.png',
+    imgAlt: 'Thanos_Infinity_4',
+    bookMarkState: false,
+    possibleAnswers: [
+      { possibleAnswer: 'Avengers: Infinity War' },
+      { possibleAnswer: 'Guardians of the Galaxy' },
+      { possibleAnswer: 'Avengers: Age of Ultron' },
+    ],
+  },
+  {
+    question:
+      'What is the name of the super-soldier serum that gave Captain America his abilities?',
+    answer: 'Super Soldier Serum',
+    imgUrl:
+      'https://i.etsystatic.com/39856277/r/il/3d95e0/4518415597/il_1140xN.4518415597_76r9.jpg',
+    imgAlt: '4518415597_76r9',
+    bookMarkState: false,
+    possibleAnswers: [
+      { possibleAnswer: 'Vita-Ray Serum' },
+      { possibleAnswer: 'Super Soldier Serum' },
+      { possibleAnswer: 'Infinity Formula' },
+    ],
+  },
+  {
+    question: 'Who is the director of the first two Avengers films?',
+    answer: 'Joss Whedon',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Joss_Whedon_by_Gage_Skidmore_4.jpg/800px-Joss_Whedon_by_Gage_Skidmore_4.jpg',
+    imgAlt: 'Joss_Whedon_by_Gage_Skidmore_4',
+    bookMarkState: false,
+    possibleAnswers: [
+      { possibleAnswer: 'James Gunn' },
+      { possibleAnswer: 'The Russo Brothers' },
+      { possibleAnswer: 'Joss Whedon' },
+    ],
+  },
+  {
+    question:
+      'What is the name of the eye patch-wearing director of S.H.I.E.L.D.?',
+    answer: 'Nick Fury',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/c/c8/Samuel_L._Jackson_as_Nick_Fury_in_The_Avengers_%282012_film%29.jpg',
+    imgAlt: 'Samuel_L._Jackson_as_Nick_Fury_in_The_Avengers',
+    bookMarkState: false,
+    possibleAnswers: [
+      { possibleAnswer: 'Phil Coulson' },
+      { possibleAnswer: 'Maria Hill' },
+      { possibleAnswer: 'Nick Fury' },
+    ],
+  },
+  {
+    question:
+      "Which Infinity Stone is hidden within Loki's scepter in 'The Avengers'?",
+    answer: 'Mind Stone',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/de/3/3c/The_Avengers_2012_logo.jpg',
+    imgAlt: 'The_Avengers_2012_logo',
+    bookMarkState: false,
+    possibleAnswers: [
+      { possibleAnswer: 'Space Stone' },
+      { possibleAnswer: 'Mind Stone' },
+      { possibleAnswer: 'Time Stone' },
+    ],
+  },
+  {
+    question: 'What species is the character Groot?',
+    answer: 'Flora Colossus',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/1/17/I_am_Groot_vol_1.jpeg',
+    imgAlt: 'I_am_Groot_vol_1',
+    bookMarkState: false,
+    possibleAnswers: [
+      { possibleAnswer: 'Arboreal Alien' },
+      { possibleAnswer: 'Flora Colossus' },
+      { possibleAnswer: 'Planetary Ent' },
+    ],
+  },
+  {
+    question:
+      'Which legendary comic book writer and editor co-created many iconic Marvel characters, including Spider-Man, Iron Man, and the X-Men?',
+    answer: 'Stan Lee',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/d/d0/Stan_Lee_by_Gage_Skidmore_3.jpg',
+    imgAlt: 'Stan_Lee_by_Gage_Skidmore_3',
+    bookMarkState: false,
+    possibleAnswers: [
+      {
+        possibleAnswer: 'Jack Kirby',
+      },
+      {
+        possibleAnswer: 'Stan Lee',
+      },
+      {
+        possibleAnswer: 'Steve Ditko',
+      },
+    ],
+  },
+  {
+    question:
+      'In which film did the character Daredevil first appear in the Marvel Cinematic Universe?',
+    answer: 'Daredevil (2003)',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/1/1e/Daredevilposter.jpg',
+    imgAlt: 'Daredevilposter',
+    bookMarkState: false,
+    possibleAnswers: [
+      {
+        possibleAnswer: 'The Punisher (2004)',
+      },
+      {
+        possibleAnswer: 'Daredevil (2003)',
+      },
+      {
+        possibleAnswer: 'Elektra (2005)',
+      },
+    ],
+  },
+  {
+    question:
+      "What is the name of the Asgardian trickster god and Thor's adopted brother?",
+    answer: 'Loki',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/8/86/Loki_in_Thor_The_Dark_World.png',
+    imgAlt: 'Loki_in_Thor_The_Dark_World',
+    bookMarkState: false,
+    possibleAnswers: [
+      {
+        possibleAnswer: 'Heimdall',
+      },
+      {
+        possibleAnswer: 'Loki',
+      },
+      {
+        possibleAnswer: 'Odin',
+      },
+    ],
+  },
+  {
+    question:
+      'Which company acquired Marvel Entertainment in 2009, expanding its vast media empire?',
+    answer: 'The Walt Disney Company',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/3/37/The_Walt_Disney_Company_logo.svg',
+    imgAlt: 'The_Walt_Disney_Company_logo',
+    bookMarkState: false,
+    possibleAnswers: [
+      {
+        possibleAnswer: 'Sony Pictures',
+      },
+      {
+        possibleAnswer: 'The Walt Disney Company',
+      },
+      {
+        possibleAnswer: 'Warner Bros.',
+      },
+    ],
+  },
+  {
+    question:
+      'Which Marvel superhero team, led by Professor X, consists of mutants with extraordinary abilities?',
+    answer: 'X-Men',
+    imgUrl:
+      'https://upload.wikimedia.org/wikipedia/en/8/84/X-Men_Origins_-_Wolverine.jpg',
+    imgAlt: 'X-Men_Origins_-_Wolverine',
+    bookMarkState: false,
+    possibleAnswers: [
+      {
+        possibleAnswer: 'Fantastic Four',
+      },
+      {
+        possibleAnswer: 'X-Men',
+      },
+      {
+        possibleAnswer: 'Guardians of the Galaxy',
+      },
+    ],
+  },
+];
+
+export const colorPaletteCaptainAmerica = [
+  '#070914', // Near Black (Darkest)
+  '#171b31', // Dark Blue
+  '#aeb7c2', // Light Gray
+  '#fefefe', // Off-White (Lightest)
+  '#9b3430', // Reddish Brown
+  '#d41212', // Bright Red
+  '#3b5fa4', // Blue
+  '#337495', // Teal
+];
+export const colorPaletteCaptainMarvel = [
+  '#047cb6',
+  '#50c6ff',
+  '#fbc623',
+  '#feff79',
+  '#ab0c0c',
+  '#ffa700',
+  '#000000',
+  '#bfbdbd',
+];
+export const colorPaletteDoctorStrange = [
+  '#00438d',
+  '#ab0c0c',
+  '#ffa700',
+  '#000000',
+  '#bfbdbd',
+];
+export const colorPaletteGroot = [
+  '#8b332c',
+  '#df9f9a',
+  '#612519',
+  '#848c4c',
+  '#cccccc',
+  '#787f42',
+];
+export const colorPaletteHulk = [
+  '#455d3',
+  '#253324',
+  '#5a4862',
+  '#9bc063',
+  '#70964b',
+];
+
+let lsObjectName = 'quizDataMCU';
+const quizLanguage = 'english';
+export const quizStateMCU = {
+  quizName: 'Marvel',
+  language: quizLanguage,
+  allQuestionsAnswered: false,
+  lsObjectName: lsObjectName,
+  currentStateData: manageLSData(data, lsObjectName),
+  bookmarked: [],
+  currentQuestionIndex: 0,
+  countCorrectAnswers: 0,
+  progressPercent: 0,
+  correctAnswersText: '',
+  colorPalette: colorPaletteCaptainAmerica,
+  geminiGenerateInstructionPrompt: `Here is an array of json objects of a trivia quiz. Please have a look at it and generate 5 more questions in context of the ${'Marvel Cinematic Universe'}. You could randomly choose topics such as questions about the films or background information such as Disney, creative Teams or the original authors. Have fun with playing around. If you choose to, please suggest only image links from wikipedia. Return only json objects, exactly with the data structure as I provided. Please keep the keys in english as is and return the values in the provided quiz language ${quizLanguage}. Thnx!`,
+};

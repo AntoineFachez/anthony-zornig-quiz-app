@@ -145,6 +145,7 @@ header .current-view-indicator {
   z-index: 100;
   /* top: var(--paddingBodyTop); */
   top: 4rem;
+  left: 0;
   width: 100%; /* Or set a fixed width */
   height: 10px; /* Adjust the height as needed */
   background-color: #455d3b; /* Color for the filled part */

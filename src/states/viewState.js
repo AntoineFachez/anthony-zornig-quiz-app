@@ -25,7 +25,7 @@ export function setNewViewState(currentAppState, htmlObjects) {
   if (currentAppState.currentView === 'quiz') {
     renderQuiz(htmlObjects, currentQuizState);
   } else if (currentAppState.currentView === 'bookmarked') {
-    renderBookMarked();
+    renderBookMarked(htmlObjects);
   } else if (currentAppState.currentView === 'newCard') {
     handleUseGeminiForSuggestions(
       createCardSelectionDropdown,

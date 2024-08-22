@@ -68,7 +68,7 @@ export function initFooterButtons(
 //   return buttonWrapper;
 // }
 
-export function setButtonClass(currentAppState) {
+export function setButtonClass(currentAppState, htmlObjects) {
   const buttons = document.querySelectorAll('.btn--footer');
   const lightOrDarkMode = currentAppState.darkMode ? 'darkMode' : 'lightMode';
   buttons.forEach((button) => {

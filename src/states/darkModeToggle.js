@@ -8,8 +8,6 @@ export function setDarkMode(mode, htmlObjects) {
   let toggleTopBottom = 'bottom';
   const className = 'dark-mode';
 
-  const root = document.querySelector('root');
-
   const body = htmlObjects.body;
   const header = htmlObjects.header;
   const footer = htmlObjects.footer;
@@ -48,7 +46,7 @@ export function setDarkMode(mode, htmlObjects) {
       });
 
       footer.style.background = accent2;
-      setButtonClass(currentAppState);
+      setButtonClass(currentAppState, htmlObjects);
     }
   } catch (error) {
     header.style.background = accent1;

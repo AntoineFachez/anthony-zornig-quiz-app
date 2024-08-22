@@ -30,8 +30,8 @@ export function getBookMarkedItems(currentAppState) {
   return bmArray;
 }
 
-export function renderBookMarked() {
-  mainSection.innerHTML = '';
+export function renderBookMarked(htmlObjects) {
+  htmlObjects.main.innerHTML = '';
   const bookmarkWraper = document.createElement('div');
   bookmarkWraper.classList.add('new-card__new-questions-wrapper');
   const bookmarkedQuestions = [];
